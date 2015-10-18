@@ -11,6 +11,6 @@ alien3_current_room = rooms["Office"]
 
 alien1_alive = True
 alien2_alive = True
-alien3_alive = False
+alien3_alive = True
 
 #will insert in lists/dictionaries
