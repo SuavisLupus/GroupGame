@@ -4,6 +4,8 @@ from map import rooms
 from player import *
 from items import *
 from gameparser import *
+from aliens import *
+from random import *
 
 
 
@@ -139,10 +141,6 @@ def print_room(room):
     print()
     print_room_items(room)
 
-    #
-    # COMPLETE ME!
-    #
-
 def exit_leads_to(exits, direction):
     """This function takes a dictionary of exits and a direction (a particular
     exit taken from this dictionary). It returns the name of the room into which
@@ -246,15 +244,16 @@ def execute_go(direction):
     moving). Otherwise, it prints "You cannot go there."
     """
     global current_room
+    global endturn
     exits=current_room["exits"]
 
     if(is_valid_exit(exits,direction)):
         current_room = move(exits,direction)
         print("player is moving to:" + current_room["name"]+'.')
     else:
-        print("You cannot go there.")    
-    
+        print("You cannot go there.")
 
+    endturn = endturn + 2
 
 def execute_take(item_id):
     """This function takes an item_id as an argument and moves this item from the
@@ -264,6 +263,7 @@ def execute_take(item_id):
     """
 
     global inventory
+    global endturn
     itmExists = False
 
     for junk in current_room["items"]:
@@ -284,7 +284,7 @@ def execute_take(item_id):
     if(itmExists == False):
         print("You cannot take that.")    
 
-    pass
+    endturn = endturn + 1
     
 
 def execute_drop(item_id):
@@ -294,6 +294,7 @@ def execute_drop(item_id):
     """
 
     global inventory
+    global endturn
     invtExists = False
 
     for loot in inventory:
@@ -306,10 +307,27 @@ def execute_drop(item_id):
 
     if(invtExists == False):
         print("You cannot drop that.")        
-    
-    #print(inventory)         
-            
-    pass
+    endturn = endturn + 1
+
+def execute_check(direction):
+    """
+    this alows the player to check nearby rooms for alien activity before walking
+    right into them
+    """
+    global current_room
+    exits=current_room["exits"]
+
+    if(is_valid_exit(exits,direction)):
+        if alien1_current_room == move(exits,direction) and alien1_alive == True:
+            print("alien is present")
+        elif alien2_current_room == move(exits,direction) and alien2_alive == True:
+            print("alien is present")
+        elif alien3_current_room == move(exits,direction) and alien3_alive == True:
+            print("alien is present")
+        else:
+            print("no alien")
+    else:
+        print("You cannot go there.")
     
 def isAvailCarry(item_id):
 
@@ -327,20 +345,7 @@ def isAvailCarry(item_id):
     if(totalWeight + float(itmWeight)) < 3:
         return True
     else:
-        return False
-
-def hasPickedUpGirl():
-    
-    global inventory
-    rtnVar = False
-
-    for loot in inventory:
-        if(loot["name"] == "Regine"):
-            return True
-        
-
-    return rtnVar        
-                        
+        return False      
 
 def execute_command(command):
     """This function takes a command (a list of words as returned by
@@ -370,6 +375,11 @@ def execute_command(command):
             execute_drop(command[1])
         else:
             print("Drop what?")
+    elif command[0] == "check":
+        if len(command) > 1:
+            execute_check(command[1])
+        else:
+            print("check where?")
 
     else:
         print("This makes no sense.")
@@ -384,6 +394,25 @@ def menu(exits, room_items, inv_items):
 
     """
 
+    # Check for alien presense
+    if alien1_current_room == current_room:
+        if alien1_alive == True:
+            print("Alien 1 is watching...")
+        elif alien1_alive == False:
+            print("Alien 1 is dead...")
+
+    if alien2_current_room == current_room:
+        if alien2_alive == True:
+            print("Alien 2 is watching...")
+        elif alien2_alive == False:
+            print("Alien 2 is dead...")
+
+    if alien3_current_room == current_room:
+        if alien3_alive == True:
+            print("Alien 3 is watching...")
+        elif alien3_alive == False:
+            print("Alien 3 is dead...")
+        
     # Display menu
     print_menu(exits, room_items, inv_items)
 
@@ -412,17 +441,38 @@ def move(exits, direction):
     # Next room to go to
     return rooms[exits[direction]]
 
+def alien_move(current_room):
+    number = randrange(1, 5, 1)
 
+    if number == 1:
+        direction = "north"
+    elif number == 2:
+        direction = "east"
+    elif number == 3:
+        direction = "south"
+    elif number == 4:
+        direction = "west"
+    print(number)
+    print(direction)
+    exits=current_room["exits"]
+
+    if(is_valid_exit(exits,direction)):
+        return rooms[exits[direction]]
+        print("returning")
+    else:
+        return current_room
+    #return move(exits,"west")
+    
+    
 # This is the entry point of our program
 def main():
-
+    global endturn
+    global alien1_current_room
+    global alien2_current_room
+    global alien2_current_room
     # Main game loop
     while True:
         # Display game status (room description, inventory etc.)
-        if(hasPickedUpGirl() == True):
-            print("CONGRATS, YOU'RE LIFE IS COMPLETE")
-            print("A GIRL IS NOW YOURS!!!!")
-            break
         print_room(current_room)
         print_inventory_items(inventory)
 
@@ -431,9 +481,18 @@ def main():
 
         # Execute the player's command
         
-
         execute_command(command)
 
+        if endturn >= 2:
+            if alien1_alive == True:
+                alien1_current_room = alien_move(alien1_current_room)
+            if alien2_alive == True:
+                alien2_current_room = alien_move(alien2_current_room)
+            if alien3_alive == True:
+                alien3_current_room = alien_move(alien3_current_room)
+            endturn = 0
+            
+        
 
 
 # Are we being run as a script? If so, run main().

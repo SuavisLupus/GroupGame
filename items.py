@@ -61,13 +61,3 @@ item_handbook = {
 
     "weight": "0.2"
 }
-
-item_pretty = {
-    "id": "girl",
-
-    "name": "Regine",
-
-    "description": "Hottest girl you've ever seen.Seriously.",
-
-    "weight": "2.9"
-}
