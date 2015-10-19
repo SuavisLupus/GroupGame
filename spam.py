@@ -7,7 +7,7 @@ loopCounter = 1
 
 spamList = []
 survived = True
-
+#def test:
 print("you have been GRABBED by an ALIEN!!!!!!!\n press enter repeatedly as quickly as you can, to struggle free")
 while time.time() < timeout:
     
