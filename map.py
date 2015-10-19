@@ -105,7 +105,7 @@ room_relay = {
     "description":
     """description""",
 
-    "exits": {"east": "Hallway23"},
+    "exits": {"east": "Hallway23", "south": "Cupboard7"},
 
     "items": []
 }
@@ -127,7 +127,7 @@ room_server = {
     "description":
     """description""",
 
-    "exits": {"west": "Hallway30"},
+    "exits": {"west": "Hallway30", "south": "Cupboard8"},
 
     "items": []
 }
@@ -438,7 +438,29 @@ room_cupboard6 = {
     "description":
     """A hiding place""",
 
-    "exits": {"east": "Hallway 8"},
+    "exits": {"east": "Hallway8"},
+
+    "items": []
+}
+
+room_cupboard7 = {
+    "name": "Cupboard",
+
+    "description":
+    """A hiding place""",
+
+    "exits": {"north": "Relay"},
+
+    "items": []
+}
+
+room_cupboard8 = {
+    "name": "Cupboard",
+
+    "description":
+    """A hiding place""",
+
+    "exits": {"north": "Server"},
 
     "items": []
 }
@@ -508,6 +530,8 @@ rooms = {
     "Cupboard4": room_cupboard4,
     "Cupboard5": room_cupboard5,
     "Cupboard6": room_cupboard6,
+    "Cupboard7": room_cupboard7,
+    "Cupboard8": room_cupboard8,
 
     "stairup": room_stairsUp,
     "stairdown": room_stairsDown,

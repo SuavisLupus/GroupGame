@@ -384,6 +384,8 @@ def execute_command(command):
     else:
         print("This makes no sense.")
 
+def encounter(alien_injuries):
+
 
 def menu(exits, room_items, inv_items):
     """This function, given a dictionary of possible exits from a room, and a list
@@ -397,7 +399,8 @@ def menu(exits, room_items, inv_items):
     # Check for alien presense
     if alien1_current_room == current_room:
         if alien1_alive == True:
-            print("Alien 1 is watching...")
+            print("an alien spots you, what do you do?...")
+            encounter(alien1_injuries)
         elif alien1_alive == False:
             print("Alien 1 is dead...")
 
@@ -453,6 +456,11 @@ def alien_move(current_room):
     elif number == 4:
         direction = "west"
     exits=current_room["exits"]
+
+    if current_room == rooms["stairdown"] and number == 4:
+        direction = "up"
+    if current_room == rooms["stairdown"] and number == 1:
+        direction = "down"
 
     if(is_valid_exit(exits,direction)):
         return rooms[exits[direction]]
