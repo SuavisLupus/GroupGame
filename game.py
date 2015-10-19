@@ -385,7 +385,7 @@ def execute_command(command):
         print("This makes no sense.")
 
 def encounter(alien_injuries):
-    print("test2")
+    print("test222")
 
 def menu(exits, room_items, inv_items):
     """This function, given a dictionary of possible exits from a room, and a list
