@@ -12,78 +12,78 @@ room_cryo = {
 }
 
 room_life = {
-    "name": "name",
+    "name": "Life Support",
 
     "description":
     """description""",
 
-    "exits": {},
+    "exits": {"east": "Hallway22", "west": "Hallway1"},
 
     "items": []
 }
 
 room_engine = {
-    "name": "name",
+    "name": "Engine Room",
 
     "description":
     """description""",
 
-    "exits": {},
+    "exits": {"north": "Hallway1"},
 
     "items": []
 }
 
 room_maintenance = {
-    "name": "name",
+    "name": "Maintenance",
 
     "description":
     """description""",
 
-    "exits": {},
+    "exits": {"east": "Hallway20", "west": "Hallway3"},
 
     "items": []
 }
 
 room_escape = {
-    "name": "name",
+    "name": "Escape Pod",
 
     "description":
     """description""",
 
-    "exits": {},
+    "exits": {"south": "Hallway9"},
 
     "items": []
 }
 
 room_bridge = {
-    "name": "name",
+    "name": "Bridge",
 
     "description":
     """description""",
 
-    "exits": {},
+    "exits": {"south": "Hallway13"},
 
     "items": []
 }
 
 room_cafeteria = {
-    "name": "name",
+    "name": "Cafeteria",
 
     "description":
     """description""",
 
-    "exits": {},
+    "exits": {"east": "Kitchen", "south": "Hallway15"},
 
     "items": []
 }
 
 room_control = {
-    "name": "name",
+    "name": "Control",
 
     "description":
     """description""",
 
-    "exits": {},
+    "exits": {"north": "stairdown", "south": "Hallway3"},
 
     "items": []
 }
@@ -94,40 +94,40 @@ room_kitchen = {
     "description":
     """description""",
 
-    "exits": {},
+    "exits": {"south": "Hallway16", "west": "Cafeteria"},
 
     "items": []
 }
 
 room_relay = {
-    "name": "name",
+    "name": "Relay Room",
 
     "description":
     """description""",
 
-    "exits": {},
+    "exits": {"east": "Hallway23"},
 
     "items": []
 }
 
-room_shield = {
-    "name": "name",
+room_research = {
+    "name": "Research Lab",
 
     "description":
     """description""",
 
-    "exits": {},
+    "exits": {"east": "Hallway27", "west": "Hallway26"},
 
     "items": []
 }
 
 room_server = {
-    "name": "name",
+    "name": "Server Room",
 
     "description":
     """description""",
 
-    "exits": {},
+    "exits": {"west": "Hallway30"},
 
     "items": []
 }
@@ -141,7 +141,7 @@ room_hallway1 = {
 
     "exits": {"north": "Hallway3", "east": "Life", "south": "Enigne", "west": "Cryo"},
 
-    "items": []
+    "items": [] 
 }
 
 room_hallway3 = {
@@ -183,7 +183,7 @@ room_hallway6 = {
     "description":
     """A long bland hallway...""",
 
-    "exits": {"north": "Hallway8", "east": "hallway5"},
+    "exits": {"north": "Hallway8", "east": "Hallway5"},
 
     "items": []
 }
@@ -194,7 +194,7 @@ room_hallway8 = {
     "description":
     """A long bland hallway...""",
 
-    "exits": {"north": "Hallway9", "south": "Hallway6", "west": "cupboard6"},
+    "exits": {"north": "Hallway9", "south": "Hallway6", "west": "Cupboard6"},
 
     "items": []
 }
@@ -205,7 +205,7 @@ room_hallway9 = {
     "description":
     """A long bland hallway...""",
 
-    "exits": {"north": "Escape", "east": "Hallway10", "south": "hallway8"},
+    "exits": {"north": "Escape", "east": "Hallway10", "south": "Hallway8"},
 
     "items": []
 }
@@ -227,7 +227,7 @@ room_hallway12 = {
     "description":
     """A long bland hallway...""",
 
-    "exits": {"north": "Hallway13", "east": "Hallway14", "south": "Stairs"},
+    "exits": {"north": "Hallway13", "east": "Hallway14", "south": "stairdown", "west": "Hallway10"},
 
     "items": []
 }
@@ -249,7 +249,7 @@ room_hallway14 = {
     "description":
     """A long bland hallway...""",
 
-    "exits": {},
+    "exits": {"east": "Hallway15", "south": "Cupboard3", "west": "Hallway12"},
 
     "items": []
 }
@@ -260,7 +260,7 @@ room_hallway15 = {
     "description":
     """A long bland hallway...""",
 
-    "exits": {},
+    "exits": {"north": "Cafeteria", "east": "Hallway16", "west": "Hallway14"},
 
     "items": []
 }
@@ -271,18 +271,7 @@ room_hallway16 = {
     "description":
     """A long bland hallway...""",
 
-    "exits": {},
-
-    "items": []
-}
-
-room_hallway17 = {
-    "name": "Hallway",
-
-    "description":
-    """A long bland hallway...""",
-
-    "exits": {},
+    "exits": {"north": "Kitchen", "south": "Hallway18", "west": "Hallway15"},
 
     "items": []
 }
@@ -293,18 +282,7 @@ room_hallway18 = {
     "description":
     """A long bland hallway...""",
 
-    "exits": {},
-
-    "items": []
-}
-
-room_hallway19 = {
-    "name": "Hallway",
-
-    "description":
-    """A long bland hallway...""",
-
-    "exits": {},
+    "exits": {"north": "Hallway16", "east": "Cupboard4", "south": "Hallway20"},
 
     "items": []
 }
@@ -315,18 +293,7 @@ room_hallway20 = {
     "description":
     """A long bland hallway...""",
 
-    "exits": {},
-
-    "items": []
-}
-
-room_hallway21 = {
-    "name": "Hallway",
-
-    "description":
-    """A long bland hallway...""",
-
-    "exits": {},
+    "exits": {"north": "Hallway18", "south": "Hallway22", "west": "Maintenance"},
 
     "items": []
 }
@@ -337,7 +304,7 @@ room_hallway22 = {
     "description":
     """A long bland hallway...""",
 
-    "exits": {},
+    "exits": {"north": "Hallway20", "east": "Cupboard5", "west": "Life"},
 
     "items": []
 }
@@ -348,7 +315,7 @@ room_hallway23 = {
     "description":
     """A long bland hallway...""",
 
-    "exits": {},
+    "exits": {"east": "Hallway24", "west": "Relay"},
 
     "items": []
 }
@@ -359,18 +326,7 @@ room_hallway24 = {
     "description":
     """A long bland hallway...""",
 
-    "exits": {},
-
-    "items": []
-}
-
-room_hallway25 = {
-    "name": "Hallway",
-
-    "description":
-    """A long bland hallway...""",
-
-    "exits": {},
+    "exits": {"north": "Hallway26", "east": "stairup", "west": "Hallway23"},
 
     "items": []
 }
@@ -381,7 +337,7 @@ room_hallway26 = {
     "description":
     """A long bland hallway...""",
 
-    "exits": {},
+    "exits": {"east": "Research", "south": "Hallway24"},
 
     "items": []
 }
@@ -392,18 +348,7 @@ room_hallway27 = {
     "description":
     """A long bland hallway...""",
 
-    "exits": {},
-
-    "items": []
-}
-
-room_hallway28 = {
-    "name": "Hallway",
-
-    "description":
-    """A long bland hallway...""",
-
-    "exits": {},
+    "exits": {"south": "Hallway29", "west": "Research"},
 
     "items": []
 }
@@ -414,7 +359,7 @@ room_hallway29 = {
     "description":
     """A long bland hallway...""",
 
-    "exits": {},
+    "exits": {"north": "Hallway27", "east": "Hallway30", "west": "stairup"},
 
     "items": []
 }
@@ -425,7 +370,7 @@ room_hallway30 = {
     "description":
     """A long bland hallway...""",
 
-    "exits": {},
+    "exits": {"east": "Server", "west": "Hallway29"},
 
     "items": []
 }
@@ -438,7 +383,7 @@ room_cupboard1 = {
     "description":
     """A hiding place""",
 
-    "exits": {},
+    "exits": {"south": "Hallway4"},
 
     "items": []
 }
@@ -449,7 +394,7 @@ room_cupboard2 = {
     "description":
     """A hiding place""",
 
-    "exits": {},
+    "exits": {"north": "Hallway5"},
 
     "items": []
 }
@@ -460,7 +405,7 @@ room_cupboard3 = {
     "description":
     """A hiding place""",
 
-    "exits": {},
+    "exits": {"north": "Hallway14"},
 
     "items": []
 }
@@ -471,7 +416,7 @@ room_cupboard4 = {
     "description":
     """A hiding place""",
 
-    "exits": {},
+    "exits": {"west": "Hallway18"},
 
     "items": []
 }
@@ -482,7 +427,7 @@ room_cupboard5 = {
     "description":
     """A hiding place""",
 
-    "exits": {},
+    "exits": {"west": "Hallway22"},
 
     "items": []
 }
@@ -493,7 +438,7 @@ room_cupboard6 = {
     "description":
     """A hiding place""",
 
-    "exits": {},
+    "exits": {"east": "Hallway 8"},
 
     "items": []
 }
@@ -504,7 +449,7 @@ room_stairsDown = {
     "description":
     """you can go up the stairs""",
 
-    "exits": {},
+    "exits": {"up": "stairup", "north": "Hallway12", "south": "Control"},
 
     "items": []
 }
@@ -515,7 +460,7 @@ room_stairsUp = {
     "description":
     """you can go down the stairs""",
 
-    "exits": {},
+    "exits": {"down": "stairdown", "east": "Hallway29", "west": "Hallway24"},
 
     "items": []
 }
@@ -531,37 +476,29 @@ rooms = {
     "Cafeteria": room_cafeteria,
     "Kitchen": room_kitchen,
     "Relay": room_relay,
-    "Shield": room_shield,
+    "Research": room_research,
     "Server": room_server,
 
     "Hallway1": room_hallway1,
-    "Hallway2": room_hallway2,
     "Hallway3": room_hallway3,
     "Hallway4": room_hallway4,
     "Hallway5": room_hallway5,
     "Hallway6": room_hallway6,
-    "Hallway7": room_hallway7,
     "Hallway8": room_hallway8,
     "Hallway9": room_hallway9,
     "Hallway10": room_hallway10,
-    "Hallway11": room_hallway11,
     "Hallway12": room_hallway12,
     "Hallway13": room_hallway13,
     "Hallway14": room_hallway14,
     "Hallway15": room_hallway15,
     "Hallway16": room_hallway16,
-    "Hallway17": room_hallway17,
     "Hallway18": room_hallway18,
-    "Hallway19": room_hallway19,
     "Hallway20": room_hallway20,
-    "Hallway21": room_hallway21,
     "Hallway22": room_hallway22,
     "Hallway23": room_hallway23,
     "Hallway24": room_hallway24,
-    "Hallway25": room_hallway25,
     "Hallway26": room_hallway26,
     "Hallway27": room_hallway27,
-    "Hallway28": room_hallway28,
     "Hallway29": room_hallway29,
     "Hallway30": room_hallway30,
 
@@ -570,7 +507,8 @@ rooms = {
     "Cupboard3": room_cupboard3,
     "Cupboard4": room_cupboard4,
     "Cupboard5": room_cupboard5,
+    "Cupboard6": room_cupboard6,
 
-    "Stairup": room_stairsUp,
+    "stairup": room_stairsUp,
     "stairdown": room_stairsDown,
 }

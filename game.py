@@ -452,8 +452,6 @@ def alien_move(current_room):
         direction = "south"
     elif number == 4:
         direction = "west"
-    print(number)
-    print(direction)
     exits=current_room["exits"]
 
     if(is_valid_exit(exits,direction)):
