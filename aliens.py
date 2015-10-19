@@ -4,10 +4,10 @@ from map import rooms
 #turn system
 endturn = 0
 
-# Start aliens at office
-alien1_current_room = rooms["Office"]
-alien2_current_room = rooms["Office"]
-alien3_current_room = rooms["Office"]
+# Start aliens at cryo
+alien1_current_room = rooms["Cryo"]
+alien2_current_room = rooms["Cryo"]
+alien3_current_room = rooms["Cryo"]
 
 alien1_alive = True
 alien2_alive = True

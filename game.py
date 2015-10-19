@@ -342,7 +342,7 @@ def isAvailCarry(item_id):
         if(stuff["id"] == item_id):
             itmWeight = stuff["weight"]    
 
-    if(totalWeight + float(itmWeight)) < 3:
+    if(totalWeight + float(itmWeight)) < 5:
         return True
     else:
         return False      
