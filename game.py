@@ -469,7 +469,7 @@ def main():
     global endturn
     global alien1_current_room
     global alien2_current_room
-    global alien2_current_room
+    global alien3_current_room
     # Main game loop
     while True:
         # Display game status (room description, inventory etc.)
