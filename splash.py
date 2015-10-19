@@ -5,7 +5,7 @@ import time
 from game import*
 
 string1 = "\n\n\n\nlong,long time ago in a magical place called RUSSIA...."
-string2 = "\n\n\n\n   A SUPER EXTRA-BRILLIANT RUSSIAN Scientist" 
+string2 = "\n\n\n\n   A SUPER EXTRA-EXCELLENT RUSSIAN Scientist" 
 string2 +="\n  WITH EXTRA-ORDINARY PROGRAMMING PROWESS EXISTED,"
 string2 +="\n	HIS NAME WAS... \n\n\n\n                KIRILL\n\n\
 			 \n\n\nABLE TO fix ERRORS with a SINGLE line of code\n\n\nABLE to create 3 dimensional models which no one understands\n\n\nAble to breakdown the entire world into Binary\n\n\nABLE TO SPOT BUGS WITHOUT opening his eyes"
