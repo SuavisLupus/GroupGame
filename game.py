@@ -6,6 +6,7 @@ from items import *
 from gameparser import *
 from aliens import *
 from random import *
+from timer import *
 
 
 
@@ -385,7 +386,13 @@ def execute_command(command):
         print("This makes no sense.")
 
 def encounter(alien_injuries):
-    print("test")
+    while True:
+        print("you can RUN or ATTACK")
+        command = input("your deccision?: ")
+        print(command)
+        command = normalise_input(command)
+        #if command[0] == "run":
+
 
 def menu(exits, room_items, inv_items):
     """This function, given a dictionary of possible exits from a room, and a list
@@ -400,7 +407,7 @@ def menu(exits, room_items, inv_items):
     if alien1_current_room == current_room:
         if alien1_alive == True:
             print("an alien spots you, what do you do?...")
-            encounter(alien1_injuries)
+            alien1_injurires = encounter(alien1_injuries)
         elif alien1_alive == False:
             print("Alien 1 is dead...")
 
@@ -505,5 +512,7 @@ def main():
 # '__main__' is the name of the scope in which top-level code executes.
 # See https://docs.python.org/3.4/library/__main__.html for explanation
 if __name__ == "__main__":
-    main()
+    p = TimerWidget()
+    while main():
+        p
 
