@@ -8,6 +8,7 @@ from aliens import *
 from random import *
 from timer import *
 from spam import *
+import time
 
 
 
@@ -248,7 +249,6 @@ def execute_go(direction):
 
     if(is_valid_exit(exits,direction)):
         current_room = move(exits,direction)
-        print("player is moving to:" + current_room["name"]+'.')
     else:
         print("You cannot go there.")
 
@@ -363,7 +363,7 @@ def execute_command(command):
 
     if 0 == len(command):
         return
-    print(command)
+
     if command[0] == "go" or command[0] == "walk" or command[0] == "run" or command[0] == "stroll" or command[0] == "hike" or command[0] == "parade" or command[0] == "pace" or command[0] == "march":
         if len(command) > 1:
             execute_go(command[1])
@@ -388,7 +388,7 @@ def execute_command(command):
             print("check where?")
 
     elif command[0] == "hide":
-        print("uhhh")
+        print("laying low...")
         if alien1_alive == True:
             alien1_current_room = alien_move(alien1_current_room)
         if alien2_alive == True:
@@ -667,7 +667,6 @@ def alien_move(alien_current_room):
     intelect = 0
     global current_room
     exits = alien_current_room["exits"]
-    print(alien_current_room["name"])
 
     for items in inventory:
         if items["id"] == "screwdriver":
@@ -689,28 +688,28 @@ def alien_move(alien_current_room):
         if current_room == rooms["stairdown"] and number == 1:
             direction = "down"
 
-        if(is_valid_exit(exits,direction)):
+        if(is_valid_exit(exits,direction)) and move(exits,direction)["name"] != "Cupboard":
             return rooms[exits[direction]]
         else:
             return alien_current_room  
 
+
+
     if intelect == 1:
-        direction = "north"
-        if(is_valid_exit(exits,"north")):
+        if(is_valid_exit(exits,"north")) and move(exits,direction)["name"] != "Cupboard":
             if current_room == move(exits,"north"):
                 return rooms[exits["north"]]
-        elif(is_valid_exit(exits,"east")):
+        elif(is_valid_exit(exits,"east")) and move(exits,direction)["name"] != "Cupboard":
             if current_room == move(exits,"east"):
                 return rooms[exits["east"]]
-        elif(is_valid_exit(exits,"south")):
+        elif(is_valid_exit(exits,"south")) and move(exits,direction)["name"] != "Cupboard":
             if current_room == move(exits,"south"):
                 return rooms[exits["south"]]
-        elif(is_valid_exit(exits,"west")):
+        elif(is_valid_exit(exits,"west")) and move(exits,direction)["name"] != "Cupboard":
             if current_room == move(exits,"west"):
                 return rooms[exits["west"]]
         
         number = randrange(1, 5, 1)
-        print("YAY")
         if number == 1:
             direction = "north"
         elif number == 2:
@@ -726,11 +725,18 @@ def alien_move(alien_current_room):
         if current_room == rooms["stairdown"] and number == 1:
             direction = "down"
 
-        if(is_valid_exit(exits,direction)):
+        if(is_valid_exit(exits,direction)) and move(exits,direction)["name"] != "Cupboard":
             return rooms[exits[direction]]
         else:
             return alien_current_room
-    print(alien_current_room["name"])
+
+def death(player_alive):
+    if player_alive == False:
+        print('You have died.\n\nGame Over.')
+        time.sleep(2)
+        quit()
+    else:
+        pass
     
 # This is the entry point of our program
 def main():
