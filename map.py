@@ -30,7 +30,7 @@ room_engine = {
 
     "exits": {"north": "Hallway1"},
 
-    "items": []
+    "items": [item_fuel]
 }
 
 room_maintenance = {
@@ -41,7 +41,7 @@ room_maintenance = {
 
     "exits": {"east": "Hallway20", "west": "Hallway3"},
 
-    "items": []
+    "items": [item_screwdriver]
 }
 
 room_escape = {
@@ -96,7 +96,7 @@ room_kitchen = {
 
     "exits": {"south": "Hallway16", "west": "Cafeteria"},
 
-    "items": []
+    "items": [item_knife]
 }
 
 room_relay = {

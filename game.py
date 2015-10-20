@@ -213,9 +213,6 @@ def print_menu(exits, room_items, inv_items):
         print("TAKE " + rmItems["id"].upper() + " to take " + rmItems["name"] + "." )    
     for loot in inv_items:
         print("DROP " + loot["id"].upper() + " to drop " + loot["name"] + ".")
-    #
-    # COMPLETE ME!
-    #
     
     print("What do you want to do?")
 
@@ -382,6 +379,8 @@ def execute_command(command):
             execute_check(command[1])
         else:
             print("check where?")
+    elif command[0] == "hide":
+        endturn = 2
 
     else:
         print("This makes no sense.")
@@ -419,8 +418,124 @@ def encounter(alien_injuries):
                     return alien_injuries
 
         if command[0] == "attack":
-            print("press enter to fight")
-            if test(randrange(20,60)) == True:
+            print("attack")
+            Won = True
+            timeout = time.time() + 1*30
+            difficulty = randrange(3, 7, 1)
+            weapon = 0
+            mistakes = 0
+            for items in inventory:
+                if items["id"] == "screwdriver" and weapon != 2:
+                    difficulty = randrange(2, 6, 1)
+                    weapon = 1
+                if items["id"] == "knife":
+                    difficulty = randrange(1, 5, 1)
+                    weapon = 2
+                    print("knife")
+
+            if weapon == 0:
+                if difficulty >= 1:
+                    attack = input("PUNCH the alien!: ")
+                    if 0 == len(normalise_input(attack)):
+                        mistakes = mistakes + 1
+                    elif "punch" != normalise_input(attack)[0]:
+                        mistakes = mistakes + 1
+                if difficulty >= 2:
+                    attack = input("KICK the alien!: ")
+                    if 0 == len(normalise_input(attack)):
+                        mistakes = mistakes + 1
+                    elif "kick" != normalise_input(attack)[0]:
+                        mistakes = mistakes + 1
+                if difficulty >= 3:
+                    attack = input("STAND up!: ")
+                    if 0 == len(normalise_input(attack)):
+                        mistakes = mistakes + 1
+                    elif "stand" != normalise_input(attack)[0]:
+                        mistakes = mistakes + 1
+                if difficulty >= 4:
+                    attack = input("SHOVE the alien away!: ")
+                    if 0 == len(normalise_input(attack)):
+                        mistakes = mistakes + 1
+                    elif "shove" != normalise_input(attack)[0]:
+                        mistakes = mistakes + 1
+                if difficulty >= 5:
+                    attack = input("Charge the alien: ")
+                    if 0 == len(normalise_input(attack)):
+                        mistakes = mistakes + 1
+                    elif "charge" != normalise_input(attack)[0]:
+                        mistakes = mistakes + 1
+                if difficulty >= 6:
+                    attack = input("KICK the alien!: ")
+                    if 0 == len(normalise_input(attack)):
+                        mistakes = mistakes + 1
+                    elif "kick" != normalise_input(attack)[0]:
+                        mistakes = mistakes + 1
+
+            if weapon == 1:
+                if difficulty >= 1:
+                    attack = input("PUNCH the alien!: ")
+                    if 0 == len(normalise_input(attack)):
+                        mistakes = mistakes + 1
+                    elif "punch" != normalise_input(attack)[0]:
+                        mistakes = mistakes + 1
+                if difficulty >= 2:
+                    attack = input("KICK the alien!: ")
+                    if 0 == len(normalise_input(attack)):
+                        mistakes = mistakes + 1
+                    elif "kick" != normalise_input(attack)[0]:
+                        mistakes = mistakes + 1
+                if difficulty >= 3:
+                    attack = input("STAB the alien!: ")
+                    if 0 == len(normalise_input(attack)):
+                        mistakes = mistakes + 1
+                    elif "stand" != normalise_input(attack)[0]:
+                        mistakes = mistakes + 1
+                if difficulty >= 4:
+                    attack = input("SHOVE the alien away!: ")
+                    if 0 == len(normalise_input(attack)):
+                        mistakes = mistakes + 1
+                    elif "shove" != normalise_input(attack)[0]:
+                        mistakes = mistakes + 1
+                if difficulty >= 5:
+                    attack = input("Charge the alien: ")
+                    if 0 == len(normalise_input(attack)):
+                        mistakes = mistakes + 1
+                    elif "charge" != normalise_input(attack)[0]:
+                        mistakes = mistakes + 1
+
+            if weapon == 2:
+                if difficulty >= 1:
+                    attack = input("CUT the alien!: ")
+                    if 0 == len(normalise_input(attack)):
+                        mistakes = mistakes + 1
+                    elif "cut" != normalise_input(attack)[0]:
+                        mistakes = mistakes + 1
+                if difficulty >= 2:
+                    attack = input("KICK the alien!: ")
+                    if 0 == len(normalise_input(attack)):
+                        mistakes = mistakes + 1
+                    elif "kick" != normalise_input(attack)[0]:
+                        mistakes = mistakes + 1
+                if difficulty >= 3:
+                    attack = input("STAB the alien!: ")
+                    if 0 == len(normalise_input(attack)):
+                        mistakes = mistakes + 1
+                    elif "stand" != normalise_input(attack)[0]:
+                        mistakes = mistakes + 1
+                if difficulty >= 4:
+                    attack = input("SLASH the alien!: ")
+                    if 0 == len(normalise_input(attack)):
+                        mistakes = mistakes + 1
+                    elif "slash" != normalise_input(attack)[0]:
+                        mistakes = mistakes + 1
+
+            if time.time() < timeout and mistakes <=2:
+                won = True
+                print("you beat the alien back and managed to run to the next room...")
+            else:
+                Won = False
+
+            if Won == True:
                 alien_injuries = alien_injuries + 1
                 if(is_valid_exit(exits, "north")):
                     current_room = rooms[exits["north"]]
@@ -530,31 +645,75 @@ def move(exits, direction):
     # Next room to go to
     return rooms[exits[direction]]
 
-def alien_move(current_room):
+def alien_move(alien_current_room):
     number = randrange(1, 5, 1)
+    intelect = 0
+    global current_room
+    exits = alien_current_room["exits"]
+    print(alien_current_room["name"])
 
-    if number == 1:
+    for items in inventory:
+        if items["id"] == "screwdriver":
+            intelect = intelect + 1
+
+    if intelect == 0:
+        if number == 1:
+            direction = "north"
+        elif number == 2:
+            direction = "east"
+        elif number == 3:
+            direction = "south"
+        elif number == 4:
+            direction = "west"
+        
+
+        if current_room == rooms["stairdown"] and number == 4:
+            direction = "up"
+        if current_room == rooms["stairdown"] and number == 1:
+            direction = "down"
+
+        if(is_valid_exit(exits,direction)):
+            return rooms[exits[direction]]
+        else:
+            return alien_current_room  
+
+    if intelect == 1:
         direction = "north"
-    elif number == 2:
-        direction = "east"
-    elif number == 3:
-        direction = "south"
-    elif number == 4:
-        direction = "west"
-    exits=current_room["exits"]
+        if(is_valid_exit(exits,"north")):
+            if current_room == move(exits,"north"):
+                return rooms[exits["north"]]
+        elif(is_valid_exit(exits,"east")):
+            if current_room == move(exits,"east"):
+                return rooms[exits["east"]]
+        elif(is_valid_exit(exits,"south")):
+            if current_room == move(exits,"south"):
+                return rooms[exits["south"]]
+        elif(is_valid_exit(exits,"west")):
+            if current_room == move(exits,"west"):
+                return rooms[exits["west"]]
+        
+        number = randrange(1, 5, 1)
+        print("YAY")
+        if number == 1:
+            direction = "north"
+        elif number == 2:
+            direction = "east"
+        elif number == 3:
+            direction = "south"
+        elif number == 4:
+            direction = "west"
+        exits = alien_current_room["exits"]
 
-    if current_room == rooms["stairdown"] and number == 4:
-        direction = "up"
-    if current_room == rooms["stairdown"] and number == 1:
-        direction = "down"
+        if current_room == rooms["stairdown"] and number == 4:
+            direction = "up"
+        if current_room == rooms["stairdown"] and number == 1:
+            direction = "down"
 
-    if(is_valid_exit(exits,direction)):
-        return rooms[exits[direction]]
-        print("returning")
-    else:
-        return current_room
-    #return move(exits,"west")
-    
+        if(is_valid_exit(exits,direction)):
+            return rooms[exits[direction]]
+        else:
+            return alien_current_room
+    print(alien_current_room["name"])
     
 # This is the entry point of our program
 def main():
@@ -572,8 +731,8 @@ def main():
         command = menu(current_room["exits"], current_room["items"], inventory)
 
         # Execute the player's command
-
         execute_command(command)
+        
         if alien1_current_room != current_room and alien2_current_room != current_room and alien3_current_room != current_room:
             if endturn >= 2:
                 if alien1_alive == True:
@@ -586,6 +745,8 @@ def main():
         else:
             endturn = 0
 
+        
+
         if player_alive == False:
             print("You Have Failed...")
             break
@@ -597,4 +758,3 @@ if __name__ == "__main__":
     p = TimerWidget()
     while main():
         p
-
