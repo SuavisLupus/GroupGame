@@ -360,24 +360,24 @@ def execute_command(command):
     if 0 == len(command):
         return
 
-    if command[0] == "go":
+    if command[0] == "go" or "walk" or "run" or "stroll" or "hike" or "parade" or "pace" or "march":
         if len(command) > 1:
             execute_go(command[1])
         else:
             print("Go where?")
 
-    elif command[0] == "take":
+    elif command[0] == "take" or "pick up":
         if len(command) > 1:
             execute_take(command[1])
         else:
             print("Take what?")
 
-    elif command[0] == "drop":
+    elif command[0] == "drop" or "ditch" or "let go" or "discard" or "leave":
         if len(command) > 1:
             execute_drop(command[1])
         else:
             print("Drop what?")
-    elif command[0] == "check":
+    elif command[0] == "check" or "look" or "peek" or "glimpse" or "view" or "listen":
         if len(command) > 1:
             execute_check(command[1])
         else:
