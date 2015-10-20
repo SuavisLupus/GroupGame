@@ -4,7 +4,7 @@ room_cryo = {
     "name": "Cryo",
 
     "description":
-    """Taking a look around the room you realise that it is mostly how you remember it.\nCryo bays for 60 crew line the walls, all eerily empty.\n The fluorescent blue lights are mostly steady, and the terminal is\n humming softly in the corner….not literally, it’s a metaphor.""",
+    """Taking a look around the room you realise that it is mostly how you remember it.\n Cryo bays for 60 crew line the walls, all eerily empty. The fluorescent blue\n lights are mostly steady, and the terminal is humming softly\n in the corner….not literally, it’s a metaphor.""",
 
     "exits": {"east": "Hallway1"},
 
@@ -48,7 +48,7 @@ room_escape = {
     "name": "Escape Pod",
 
     "description":
-    """description""",
+    """Tens of corpses scattered across the floor in various states and…...pieces. It reminds you of rugby.\n  The crew must have ran here once they knew Wales had lost as all but one of the escape pods were gone, \n clearly not everyone made it. """,
 
     "exits": {"south": "Hallway9"},
 
@@ -59,7 +59,7 @@ room_bridge = {
     "name": "Bridge",
 
     "description":
-    """description""",
+    """The massive windows of the bridge are the first things that greet you, but they are not as they \nonce were. Large cracks run through them, and you start to feel lightheaded \n as you notice the hissing of oxygen leaving the room. \n Blood has pooled around the Captain’s chair in the centre of the room and you feel relieved \n when there isn’t a body sa- oh wait nope, that’s definitely a severed hand right there.""",
 
     "exits": {"south": "Hallway13"},
 
