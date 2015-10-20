@@ -1,12 +1,12 @@
 import string
 
-# List of "unimportant" words (feel free to add more)
+# List of "unimportant" words
 skip_words = ['a', 'about', 'all', 'an', 'another', 'any', 'around', 'at',
               'bad', 'beautiful', 'been', 'better', 'big', 'can', 'every', 'for',
               'from', 'good', 'have', 'her', 'here', 'hers', 'his', 'how',
               'i', 'if', 'in', 'into', 'is', 'it', 'its', 'large', 'later',
               'like', 'little', 'main', 'me', 'mine', 'more', 'my', 'now',
-              'of', 'off', 'oh', 'on', 'please', 'small', 'some', 'soon',
+              'of', 'off', 'oh', 'on', 'please', 'stroll', 'small', 'some', 'soon',
               'that', 'the', 'then', 'this', 'those', 'through', 'till', 'to',
               'towards', 'until', 'us', 'want', 'we', 'what', 'when', 'why',
               'wish', 'with', 'would']
@@ -27,24 +27,10 @@ def filter_words(words, skip_words):
     ['go', 'passage', 'south']
 
     """
-    
-    newList = []
-    isFound = False
 
-    for item in words:
-        isFound = False
-        for keyword in skip_words:
-            if(item == keyword):
-                isFound = True
-            
-        if(isFound == False):
-            newList.append(item)        
+    word_filter = [each_word for each_word in words if each_word not in skip_words]
+    return word_filter      
 
-    return newList            
-
-    
-
-    
 def remove_punct(text):
     """This function is used to remove all punctuation
     marks from a string. Spaces do not count as punctuation and should
@@ -111,8 +97,5 @@ def normalise_input(user_input):
     #print(turn2List)
     no_keywords = filter_words(turn2List,skip_words)
 
-    #
-    # COMPLETE ME!
-    #
     wordlist = no_keywords
     return wordlist
