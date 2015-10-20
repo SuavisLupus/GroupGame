@@ -219,7 +219,8 @@ room_hallway8 = {
     "name": "Hallway",
 
     "description":
-    """""",
+    """Eerie noises echo throughout the ship.......You see the doors of the escape pod at the northern end of the corridor!\
+    \nTo the west are the doors of yet another cupboard, the hallway curves away in the south.""",
 
     "exits": {"north": "Hallway9", "south": "Hallway6", "west": "Cupboard6"},
 
@@ -230,7 +231,8 @@ room_hallway9 = {
     "name": "Hallway",
 
     "description":
-    """A long bland hallway...""",
+    """The escape-pod room lies directly infront of you, and the hallway extends far both to the east and south. \
+    \n You remember the kitchen and stairs to the upper deck were definately to the east somewhere....""",
 
     "exits": {"north": "Escape", "east": "Hallway10", "south": "Hallway8"},
 
@@ -241,7 +243,7 @@ room_hallway10 = {
     "name": "Hallway",
 
     "description":
-    """A long bland hallway...""",
+    """The hallway continues on into the distance to the east, a corner lies to the west...""",
 
     "exits": {"east": "Hallway12", "west": "Hallway9"},
 
@@ -252,7 +254,10 @@ room_hallway12 = {
     "name": "Hallway",
 
     "description":
-    """A long bland hallway...""",
+    """The crossroads of the space stations hallway network; the once fine central location now gives off the aura\
+    \nof a massacre, with not a single alien body to be seen amoungst the many dead....half of the station\
+    \nmust have died here! To the south you see the stairwell ascending upwards, and to the east you see the doors \
+    \nof the stations bridge. The hallway extends in each direction.""",
 
     "exits": {"north": "Hallway13", "east": "Hallway14", "south": "stairdown", "west": "Hallway10"},
 
