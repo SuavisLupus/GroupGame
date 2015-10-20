@@ -7,6 +7,7 @@ from gameparser import *
 from aliens import *
 from random import *
 from timer import *
+from spam import *
 
 
 
@@ -386,12 +387,73 @@ def execute_command(command):
         print("This makes no sense.")
 
 def encounter(alien_injuries):
+    global current_room
+
+    exits=current_room["exits"]
+
     while True:
+
         print("you can RUN or ATTACK")
         command = input("your deccision?: ")
-        print(command)
         command = normalise_input(command)
-        #if command[0] == "run":
+
+        if 0 == len(command):
+            encounter(alien_injuries)
+
+        if command[0] == "run":
+            print("press enter to run!!")
+
+            if test(randrange(1,30)) == True:
+
+                if(is_valid_exit(exits,"north")):
+                    current_room = rooms[exits["north"]]
+                    return alien_injuries
+                elif(is_valid_exit(exits,"east")):
+                    current_room = rooms[exits["east"]]
+                    return alien_injuries
+                elif(is_valid_exit(exits,"south")):
+                    current_room = rooms[exits["south"]]
+                    return alien_injuries
+                elif(is_valid_exit(exits,"west")):
+                    current_room = rooms[exits["west"]]
+                    return alien_injuries
+
+        if command[0] == "attack":
+            print("press enter to fight")
+            if test(randrange(20,60)) == True:
+                alien_injuries = alien_injuries + 1
+                if(is_valid_exit(exits,"north")):
+                    current_room = rooms[exits["north"]]
+                    return alien_injuries
+                elif(is_valid_exit(exits,"east")):
+                    current_room = rooms[exits["east"]]
+                    return alien_injuries
+                elif(is_valid_exit(exits,"south")):
+                    current_room = rooms[exits["south"]]
+                    return alien_injuries
+                elif(is_valid_exit(exits,"west")):
+                    current_room = rooms[exits["west"]]
+                    return alien_injuries
+            elif randrange(1,101) >= 70:
+
+                print("you distract it long enough to escape")
+
+                if(is_valid_exit(exits,"north")):
+                    current_room = rooms[exits["north"]]
+                    return alien_injuries
+                elif(is_valid_exit(exits,"east")):
+                    current_room = rooms[exits["east"]]
+                    return alien_injuries
+                elif(is_valid_exit(exits,"south")):
+                    current_room = rooms[exits["south"]]
+                    return alien_injuries
+                elif(is_valid_exit(exits,"west")):
+                    current_room = rooms[exits["west"]]
+                    return alien_injuries
+            else:
+                print("you fail to kill the alien and it devours you...")
+                player_alive = False
+                return alien_injuries
 
 
 def menu(exits, room_items, inv_items):
@@ -402,24 +464,38 @@ def menu(exits, room_items, inv_items):
     function before being returned.
 
     """
+    global alien1_alive
+    global alien2_alive
+    global alien3_alive
+    global alien1_injuries
+    global alien2_injuries
+    global alien3_injuries
 
     # Check for alien presense
     if alien1_current_room == current_room:
         if alien1_alive == True:
             print("an alien spots you, what do you do?...")
-            alien1_injurires = encounter(alien1_injuries)
+            alien1_injuries = encounter(alien1_injuries)
+            if alien1_injuries >= 4:
+                alien1_alive = False
         elif alien1_alive == False:
             print("Alien 1 is dead...")
 
     if alien2_current_room == current_room:
         if alien2_alive == True:
-            print("Alien 2 is watching...")
+            print("an alien spots you, what do you do?...")
+            alien2_injuries = encounter(alien2_injuries)
+            if alien2_injuries >= 4:
+                alien2_alive = False
         elif alien2_alive == False:
             print("Alien 2 is dead...")
 
     if alien3_current_room == current_room:
         if alien3_alive == True:
-            print("Alien 3 is watching...")
+            print("an alien spots you, what do you do?...")
+            alien3_injuries = encounter(alien1_injuries)
+            if alien3_injuries >= 4:
+                alien3_alive = False
         elif alien3_alive == False:
             print("Alien 3 is dead...")
         
@@ -504,7 +580,9 @@ def main():
             if alien3_alive == True:
                 alien3_current_room = alien_move(alien3_current_room)
             endturn = 0
-            
+        if player_alive == False:
+            print("You Have Failed...")
+            break
         
 
 

@@ -5,7 +5,7 @@ from map import rooms
 endturn = 0
 
 # Start aliens at cryo
-alien1_current_room = rooms["Hallway9"]
+alien1_current_room = rooms["Cryo"]
 alien2_current_room = rooms["Kitchen"]
 alien3_current_room = rooms["stairdown"]
 
