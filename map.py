@@ -6,7 +6,7 @@ room_cryo = {
     "description":
     """Taking a look around the room you realise that it is mostly how you remember it. Cryo bays for 60\
     \n crew line the walls, all eerily empty. The fluorescent blue lights are mostly steady, and the terminal\
-    \n is humming softly\n in the corner….not literally, its a metaphor.""",
+    \n is humming softly\n in the corner...not literally, its a metaphor.""",
 
     "exits": {"east": "Hallway1"},
 
@@ -31,7 +31,7 @@ room_engine = {
 
     "description":
     """The engines lay ominously silent for the first time Kirill could remember, the only noise being the\
-    \n dismal creaking of the ship….. Should ships sound like that? You hear the loud sounds of snapping metal \
+    \n dismal creaking of the ship....Should ships sound like that? You hear the loud sounds of snapping metal \
     \nin the distance, followed\n by what could only be described as the twanging of a giant rubber band....nope\
     \n....probably not.""",
 
@@ -55,7 +55,7 @@ room_escape = {
     "name": "Escape Pod",
 
     "description":
-    """Tens of corpses scattered across the floor in various states and…...pieces. It reminds you of rugby.\
+    """Tens of corpses scattered across the floor in various states and....pieces. It reminds you of rugby.\
     \n  The crew must have ran here once they knew Wales had lost as all but one of the escape pods were gone, \
     \n clearly not everyone made it. """,
 
@@ -108,7 +108,7 @@ room_kitchen = {
     \n throughout. As you look around you start to remember you used to have a thing for the old cafeteria lady, \
     \nDorothy. She was sexy as can be, legs as long as a runway, curves that would make an hour glass jealous. \
     \nYou have many fond memories of this place and\n feel a deep warmth grow from within. You regret the mistakes\
-    \nthat have led to this day, the life you could have had…..Was it hot in here? """,
+    \nthat have led to this day, the life you could have had....Was it hot in here? """,
 
     "exits": {"south": "Hallway16", "west": "Cafeteria"},
 
@@ -195,7 +195,7 @@ room_hallway5 = {
     "name": "Hallway",
 
     "description":
-    """You see a curve in the hallway to the west, to the south is a cupboard in the east yo ucan distantly see the\
+    """You see a curve in the hallway to the west, to the south is a cupboard in the east you can distantly see the\
     \ndoors of the maintenance room. """,
 
     "exits": {"east": "Hallway4", "south": "Cupboard2", "west": "Hallway6"},
