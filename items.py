@@ -44,7 +44,7 @@ item_code = {
 item_oxygen_filter = {
 	"id": "oxygen_filter",
 
-	"name": "Oxygen Filter"
+	"name": "Oxygen Filter",
 
 	"description": "A device that converts excess Carbon Dioxide into Oxygen",
 
@@ -56,7 +56,7 @@ item_cable = {
 
 	"name": "Cable",
 
-	"description": "A cable that could be used to connect electronic items together"
+	"description": "A cable that could be used to connect electronic items together",
 
 	"weight": "0.1"
 }
@@ -66,7 +66,7 @@ item_distress_beacon = {
 
 	"name": "Distress Beacon",
 
-	"description": "A beacon that transmits your current location on all emergency channels"
+	"description": "A beacon that transmits your current location on all emergency channels",
 
 	"weight": "3.0"
 }
