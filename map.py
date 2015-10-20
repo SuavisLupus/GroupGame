@@ -4,7 +4,7 @@ room_cryo = {
     "name": "Cryo",
 
     "description":
-    """Taking a look around the room you realise that it is mostly how you remember it.\n Cryo bays for 60 crew line the walls, all eerily empty. The fluorescent blue\n lights are mostly steady, and the terminal is humming softly\n in the corner….not literally, it’s a metaphor.""",
+    """Taking a look around the room you realise that it is mostly how you remember it.\n Cryo bays for 60 crew line the walls, all eerily empty. The fluorescent blue\n lights are mostly steady, and the terminal is humming softly\n in the corner... not literally, its a metaphor.""",
 
     "exits": {"east": "Hallway1"},
 
