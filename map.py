@@ -4,7 +4,7 @@ room_cryo = {
     "name": "Cryo",
 
     "description":
-    """This is where you slept while everyone on board was devoured.""",
+    """Taking a look around the room you realise that it is mostly how you remember it.\nCryo bays for 60 crew line the walls, all eerily empty.\n The fluorescent blue lights are mostly steady, and the terminal is\n humming softly in the corner….not literally, it’s a metaphor.""",
 
     "exits": {"east": "Hallway1"},
 
