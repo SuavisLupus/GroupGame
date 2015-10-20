@@ -34,10 +34,10 @@ item_fuel = {
 item_airlock = {
 	"id": "code",
 
-	"name": "879834"
+	"name": "879834",
 
 	"description":
-	"its a code..."
+	"its a code...",
 
 	"weight": "0.0"
 }

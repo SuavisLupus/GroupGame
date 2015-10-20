@@ -402,6 +402,7 @@ def execute_command(command):
 
 def encounter(alien_injuries):
     global current_room
+    global player_alive
 
     exits=current_room["exits"]
 
@@ -583,6 +584,7 @@ def encounter(alien_injuries):
             else:
                 print("you fail to kill the alien and it devours you...")
                 player_alive = False
+                main()
                 return alien_injuries
 
 
@@ -739,6 +741,9 @@ def main():
     # Main game loop
     while True:
         # Display game status (room description, inventory etc.)
+        if player_alive == False:
+            break
+
         print_room(current_room)
         print_inventory_items(inventory)
 
@@ -762,9 +767,7 @@ def main():
 
         
 
-        if player_alive == False:
-            print("You Have Failed...")
-            break
+        
 
 # Are we being run as a script? If so, run main().
 # '__main__' is the name of the scope in which top-level code executes.
