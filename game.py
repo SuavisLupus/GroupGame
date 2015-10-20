@@ -405,16 +405,16 @@ def encounter(alien_injuries):
 
             if test(randrange(1,30)) == True:
 
-                if(is_valid_exit(exits,"north")):
+                if(is_valid_exit(exits, "north")):
                     current_room = rooms[exits["north"]]
                     return alien_injuries
-                elif(is_valid_exit(exits,"east")):
+                elif(is_valid_exit(exits, "east")):
                     current_room = rooms[exits["east"]]
                     return alien_injuries
-                elif(is_valid_exit(exits,"south")):
+                elif(is_valid_exit(exits, "south")):
                     current_room = rooms[exits["south"]]
                     return alien_injuries
-                elif(is_valid_exit(exits,"west")):
+                elif(is_valid_exit(exits, "west")):
                     current_room = rooms[exits["west"]]
                     return alien_injuries
 
@@ -422,32 +422,32 @@ def encounter(alien_injuries):
             print("press enter to fight")
             if test(randrange(20,60)) == True:
                 alien_injuries = alien_injuries + 1
-                if(is_valid_exit(exits,"north")):
+                if(is_valid_exit(exits, "north")):
                     current_room = rooms[exits["north"]]
                     return alien_injuries
-                elif(is_valid_exit(exits,"east")):
+                elif(is_valid_exit(exits, "east")):
                     current_room = rooms[exits["east"]]
                     return alien_injuries
-                elif(is_valid_exit(exits,"south")):
+                elif(is_valid_exit(exits, "south")):
                     current_room = rooms[exits["south"]]
                     return alien_injuries
-                elif(is_valid_exit(exits,"west")):
+                elif(is_valid_exit(exits, "west")):
                     current_room = rooms[exits["west"]]
                     return alien_injuries
             elif randrange(1,101) >= 70:
 
                 print("you distract it long enough to escape")
 
-                if(is_valid_exit(exits,"north")):
+                if(is_valid_exit(exits, "north")):
                     current_room = rooms[exits["north"]]
                     return alien_injuries
-                elif(is_valid_exit(exits,"east")):
+                elif(is_valid_exit(exits, "east")):
                     current_room = rooms[exits["east"]]
                     return alien_injuries
-                elif(is_valid_exit(exits,"south")):
+                elif(is_valid_exit(exits, "south")):
                     current_room = rooms[exits["south"]]
                     return alien_injuries
-                elif(is_valid_exit(exits,"west")):
+                elif(is_valid_exit(exits, "west")):
                     current_room = rooms[exits["west"]]
                     return alien_injuries
             else:
@@ -478,6 +478,7 @@ def menu(exits, room_items, inv_items):
             alien1_injuries = encounter(alien1_injuries)
             if alien1_injuries >= 4:
                 alien1_alive = False
+            return ""
         elif alien1_alive == False:
             print("Alien 1 is dead...")
 
@@ -487,6 +488,7 @@ def menu(exits, room_items, inv_items):
             alien2_injuries = encounter(alien2_injuries)
             if alien2_injuries >= 4:
                 alien2_alive = False
+            return ""
         elif alien2_alive == False:
             print("Alien 2 is dead...")
 
@@ -496,6 +498,7 @@ def menu(exits, room_items, inv_items):
             alien3_injuries = encounter(alien1_injuries)
             if alien3_injuries >= 4:
                 alien3_alive = False
+            return ""
         elif alien3_alive == False:
             print("Alien 3 is dead...")
         
@@ -569,22 +572,23 @@ def main():
         command = menu(current_room["exits"], current_room["items"], inventory)
 
         # Execute the player's command
-        
-        execute_command(command)
 
-        if endturn >= 2:
-            if alien1_alive == True:
-                alien1_current_room = alien_move(alien1_current_room)
-            if alien2_alive == True:
-                alien2_current_room = alien_move(alien2_current_room)
-            if alien3_alive == True:
-                alien3_current_room = alien_move(alien3_current_room)
+        execute_command(command)
+        if alien1_current_room != current_room and alien2_current_room != current_room and alien3_current_room != current_room:
+            if endturn >= 2:
+                if alien1_alive == True:
+                    alien1_current_room = alien_move(alien1_current_room)
+                if alien2_alive == True:
+                    alien2_current_room = alien_move(alien2_current_room)
+                if alien3_alive == True:
+                    alien3_current_room = alien_move(alien3_current_room)
+                endturn = 0
+        else:
             endturn = 0
+
         if player_alive == False:
             print("You Have Failed...")
             break
-        
-
 
 # Are we being run as a script? If so, run main().
 # '__main__' is the name of the scope in which top-level code executes.

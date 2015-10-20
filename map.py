@@ -89,7 +89,7 @@ room_control = {
 }
 
 room_kitchen = {
-    "name": "name",
+    "name": "Kitchen",
 
     "description":
     """description""",
