@@ -30,3 +30,23 @@ item_fuel = {
 
 	"weight": "1.2"
 }
+
+item_airlock = {
+	"id": "code",
+
+	"name": "879834",
+
+	"description":
+	"its a code...",
+
+	"weight": "0.0"
+}
+
+#o	Escape Pod
+#	Fuel tanks
+#	Airlock break code
+#	Oxygen Filter
+#	Power Pack
+#	Distress beacon:
+#•	Cable
+#•	Relay
