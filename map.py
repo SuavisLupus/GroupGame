@@ -41,7 +41,7 @@ room_maintenance = {
 
     "exits": {"east": "Hallway20", "west": "Hallway3"},
 
-    "items": [item_screwdriver, item_oxygen_filter]
+    "items": [item_screwdriver]
 }
 
 room_escape = {
@@ -107,7 +107,7 @@ room_relay = {
 
     "exits": {"east": "Hallway23", "south": "Cupboard7"},
 
-    "items": [item_distress_beacon]
+    "items": []
 }
 
 room_research = {
@@ -129,7 +129,7 @@ room_server = {
 
     "exits": {"west": "Hallway30", "south": "Cupboard8"},
 
-    "items": [item_cable]
+    "items": []
 }
 
 #Hallways
@@ -440,7 +440,7 @@ room_cupboard6 = {
 
     "exits": {"east": "Hallway8"},
 
-    "items": [item_code]
+    "items": []
 }
 
 room_cupboard7 = {
