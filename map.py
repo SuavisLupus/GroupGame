@@ -15,7 +15,7 @@ room_life = {
     "name": "Life Support",
 
     "description":
-    """description""",
+    """The life support room has seen better days. Sparks fly from the system, revealing the walls in sad \nflashes of light and leaving dark and shady corners throughout. You squint your eyes to see, a faint message written on the\n wall “FORGIVE ME…” There is a distinct smell of bacon in the air. """,
 
     "exits": {"east": "Hallway22", "west": "Hallway1"},
 
@@ -26,7 +26,7 @@ room_engine = {
     "name": "Engine Room",
 
     "description":
-    """description""",
+    """The engines lay ominously silent for the first time Kirill could remember, the only noise being the\n dismal creaking of the ship….. Should ships sound like that? You hear the loud sounds of snapping metal in the distance, followed\n by what could only be described as the twanging of a giant rubber band…….nope….probably not.""",
 
     "exits": {"north": "Hallway1"},
 
@@ -92,7 +92,7 @@ room_kitchen = {
     "name": "Kitchen",
 
     "description":
-    """description""",
+    """Multiple stoves and ovens line one side of the room, with various kitchen tools and utensils scattered\n throughout. As you look around you start to remember you used to have a thing for the old cafeteria lady, Dorothy. She was sexy as can \nbe, legs as long as a runway, curves that would make an hour glass jealous. You have many fond memories of this place and\n feel a deep warmth grow from within. You regret the\n mistakes that have led to this day, the life you could have had…..Was it hot in here? """,
 
     "exits": {"south": "Hallway16", "west": "Cafeteria"},
 
@@ -114,7 +114,7 @@ room_research = {
     "name": "Research Lab",
 
     "description":
-    """description""",
+    """Strange plants and creatures are scattered in glass containers throughout the room, you are\n acutely aware that some of the containers lie broken and empty........ Looking around more you start to fully realise the extent of\n the mess; pages of notes, chemicals, and lab equipment mix with the blood and the bodies of the main research team. Only one\n terminal is still in working order, the others having been seemingly smashed apart in the struggle.""",
 
     "exits": {"east": "Hallway27", "west": "Hallway26"},
 
