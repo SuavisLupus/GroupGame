@@ -4,7 +4,7 @@ room_cryo = {
     "name": "Cryo",
 
     "description":
-    """Taking a look around the room you realise that it is mostly how you remember it.\n Cryo bays for 60 crew line the walls, all eerily empty. The fluorescent blue\n lights are mostly steady, and the terminal is humming softly\n in the corner….not literally, its a metaphor.""",
+    """Taking a look around the room you realise that it is mostly how you remember it.\n Cryo bays for 60 crew line the walls, all eerily empty. The fluorescent blue\n lights are mostly steady, and the terminal is humming softly\n in the corner... not literally, its a metaphor.""",
 
     "exits": {"east": "Hallway1"},
 
@@ -15,7 +15,7 @@ room_life = {
     "name": "Life Support",
 
     "description":
-    """The life support room has seen better days. Sparks fly from the system, revealing the walls in sad \nflashes of light and leaving dark and shady corners throughout. You squint your eyes to see, a faint message written on the\n wall “ + " FORGIVE ME… ” + " There is a distinct smell of bacon in the air. """,
+    """The life support room has seen better days. Sparks fly from the system, revealing the walls in sad \nflashes of light and leaving dark and shady corners throughout. You squint your eyes to see, a faint message written on the\n wall “FORGIVE ME…” There is a distinct smell of bacon in the air. """,
 
     "exits": {"east": "Hallway22", "west": "Hallway1"},
 
@@ -59,7 +59,7 @@ room_bridge = {
     "name": "Bridge",
 
     "description":
-    """The massive windows of the bridge are the first things that greet you, but they are not as they \nonce were. Large cracks run through them, and you start to feel lightheaded \n as you notice the hissing of oxygen leaving the room. \n Blood has pooled around the Captain’s chair in the centre of the room and you feel relieved \n when there isnt a body sa- oh wait nope, thats definitely a severed hand right there.""",
+    """The massive windows of the bridge are the first things that greet you, but they are not as they \nonce were. Large cracks run through them, and you start to feel lightheaded \n as you notice the hissing of oxygen leaving the room. \n Blood has pooled around the Captain’s chair in the centre of the room and you feel relieved \n when there isn’t a body sa- oh wait nope, that’s definitely a severed hand right there.""",
 
     "exits": {"south": "Hallway13"},
 
