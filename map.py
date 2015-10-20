@@ -26,7 +26,7 @@ room_engine = {
     "name": "Engine Room",
 
     "description":
-    """The engines lay ominously silent for the first time Kirill could remember, the only noise being the\n dismal creaking of the ship….. Should ships sound like that? You hear the loud sounds of snapping metal in the distance, followed\n by what could only be described as the twanging of a giant rubber band…….nope….probably not.""",
+    """The engines lay ominously silent for the first time Kirill could remember, the only noise being the\n dismal creaking of the ship.. Should ships sound like that? You hear the loud sounds of snapping metal in the distance, followed\n by what could only be described as the twanging of a giant rubber band...nope...probably not.""",
 
     "exits": {"north": "Hallway1"},
 
@@ -48,7 +48,7 @@ room_escape = {
     "name": "Escape Pod",
 
     "description":
-    """Tens of corpses scattered across the floor in various states and…...pieces. It reminds you of rugby.\n  The crew must have ran here once they knew Wales had lost as all but one of the escape pods were gone, \n clearly not everyone made it. """,
+    """Tens of corpses scattered across the floor in various states and...pieces. It reminds you of rugby.\n  The crew must have ran here once they knew Wales had lost as all but one of the escape pods were gone, \n clearly not everyone made it. """,
 
     "exits": {"south": "Hallway9"},
 
