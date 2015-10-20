@@ -354,33 +354,48 @@ def execute_command(command):
 
     """
 
+    global alien1_alive
+    global alien1_current_room
+    global alien2_alive
+    global alien2_current_room
+    global alien3_alive
+    global alien3_current_room
+
     if 0 == len(command):
         return
-
-    if command[0] == "go" or "walk" or "run" or "stroll" or "hike" or "parade" or "pace" or "march":
+    print(command)
+    if command[0] == "go" or command[0] == "walk" or command[0] == "run" or command[0] == "stroll" or command[0] == "hike" or command[0] == "parade" or command[0] == "pace" or command[0] == "march":
         if len(command) > 1:
             execute_go(command[1])
         else:
             print("Go where?")
 
-    elif command[0] == "take" or "pick up":
+    elif command[0] == "take" or command[0] == "pick up":
         if len(command) > 1:
             execute_take(command[1])
         else:
             print("Take what?")
 
-    elif command[0] == "drop" or "ditch" or "let go" or "discard" or "leave":
+    elif command[0] == "drop" or command[0] == "ditch" or command[0] == "let go" or command[0] == "discard" or command[0] == "leave":
         if len(command) > 1:
             execute_drop(command[1])
         else:
             print("Drop what?")
-    elif command[0] == "check" or "look" or "peek" or "glimpse" or "view" or "listen":
+    elif command[0] == "check" or command[0] == "look" or command[0] == "peek" or command[0] == "glimpse" or command[0] == "view" or command[0] == "listen":
         if len(command) > 1:
             execute_check(command[1])
         else:
             print("check where?")
+
     elif command[0] == "hide":
-        endturn = 2
+        print("uhhh")
+        if alien1_alive == True:
+            alien1_current_room = alien_move(alien1_current_room)
+        if alien2_alive == True:
+            alien2_current_room = alien_move(alien2_current_room)
+        if alien3_alive == True:
+            alien3_current_room = alien_move(alien3_current_room)
+        endturn = 0
 
     else:
         print("This makes no sense.")

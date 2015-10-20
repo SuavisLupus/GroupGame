@@ -92,7 +92,7 @@ room_kitchen = {
     "name": "Kitchen",
 
     "description":
-    """Multiple stoves and ovens line one side of the room, with various kitchen tools and utensils scattered\n throughout. As you look around you start to remember you used to have a thing for the old cafeteria lady, Dorothy. She was sexy as can \nbe, legs as long as a runway, curves that would make an hour glass jealous. You have many fond memories of this place and\n feel a deep warmth grow from within. You regret the\n mistakes that have led to this day, the life you could have had…..Was it hot in here? """,
+    """Multiple stoves and ovens line one side of the room, with various kitchen tools and utensils scattered\n throughout. As you look around you start to remember you used to have a thing for the old cafeteria lady, Dorothy. She was sexy as can \nbe, legs as long as a runway, curves that would make an hour glass jealous. You have many fond memories of this place and\n feel a deep warmth grow from within. You regret the\n mistakes that have led to this day, the life you could have had...Was it hot in here? """,
 
     "exits": {"south": "Hallway16", "west": "Cafeteria"},
 
