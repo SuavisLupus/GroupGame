@@ -213,9 +213,6 @@ def print_menu(exits, room_items, inv_items):
         print("TAKE " + rmItems["id"].upper() + " to take " + rmItems["name"] + "." )    
     for loot in inv_items:
         print("DROP " + loot["id"].upper() + " to drop " + loot["name"] + ".")
-    #
-    # COMPLETE ME!
-    #
     
     print("What do you want to do?")
 
@@ -382,6 +379,8 @@ def execute_command(command):
             execute_check(command[1])
         else:
             print("check where?")
+    elif command[0] == "hide":
+        endturn = 2
 
     else:
         print("This makes no sense.")
@@ -419,8 +418,145 @@ def encounter(alien_injuries):
                     return alien_injuries
 
         if command[0] == "attack":
-            print("press enter to fight")
-            if test(randrange(20,60)) == True:
+            print("attack")
+            Won = True
+            timeout = time.time() + 1*30
+            difficulty = randrange(3, 7, 1)
+            weapon = 0
+            mistakes = 0
+            for items in inventory:
+                if items["id"] == "screwdriver":
+                    difficulty = randrange(2, 6, 1)
+                    weapon = 1
+                    print("screw")
+                if items["id"] == "knife":
+                    difficulty = randrange(1, 5, 1)
+                    weapon = 2
+                else:
+                    difficulty = randrange(3, 7, 1)
+                    weapon = 0
+
+            if weapon == 0:
+                if difficulty >= 1:
+                    attack = input("PUNCH the alien!: ")
+                    if 0 == len(normalise_input(attack)):
+                        mistakes = mistakes + 1
+                    elif "punch" != normalise_input(attack)[0]:
+                        mistakes = mistakes + 1
+                if difficulty >= 2:
+                    attack = input("KICK the alien!: ")
+                    if 0 == len(normalise_input(attack)):
+                        mistakes = mistakes + 1
+                    elif "kick" != normalise_input(attack)[0]:
+                        mistakes = mistakes + 1
+                if difficulty >= 3:
+                    attack = input("STAND up!: ")
+                    if 0 == len(normalise_input(attack)):
+                        mistakes = mistakes + 1
+                    elif "stand" != normalise_input(attack)[0]:
+                        mistakes = mistakes + 1
+                if difficulty >= 4:
+                    attack = input("SHOVE the alien away!: ")
+                    if 0 == len(normalise_input(attack)):
+                        mistakes = mistakes + 1
+                    elif "shove" != normalise_input(attack)[0]:
+                        mistakes = mistakes + 1
+                if difficulty >= 5:
+                    attack = input("Charge the alien: ")
+                    if 0 == len(normalise_input(attack)):
+                        mistakes = mistakes + 1
+                    elif "charge" != normalise_input(attack)[0]:
+                        mistakes = mistakes + 1
+                if difficulty >= 6:
+                    attack = input("KICK the alien!: ")
+                    if 0 == len(normalise_input(attack)):
+                        mistakes = mistakes + 1
+                    elif "kick" != normalise_input(attack)[0]:
+                        mistakes = mistakes + 1
+
+            if weapon == 1:
+                if difficulty >= 1:
+                    attack = input("PUNCH the alien!: ")
+                    if 0 == len(normalise_input(attack)):
+                        mistakes = mistakes + 1
+                    elif "punch" != normalise_input(attack)[0]:
+                        mistakes = mistakes + 1
+                if difficulty >= 2:
+                    attack = input("KICK the alien!: ")
+                    if 0 == len(normalise_input(attack)):
+                        mistakes = mistakes + 1
+                    elif "kick" != normalise_input(attack)[0]:
+                        mistakes = mistakes + 1
+                if difficulty >= 3:
+                    attack = input("STAND up!: ")
+                    if 0 == len(normalise_input(attack)):
+                        mistakes = mistakes + 1
+                    elif "stand" != normalise_input(attack)[0]:
+                        mistakes = mistakes + 1
+                if difficulty >= 4:
+                    attack = input("SHOVE the alien away!: ")
+                    if 0 == len(normalise_input(attack)):
+                        mistakes = mistakes + 1
+                    elif "shove" != normalise_input(attack)[0]:
+                        mistakes = mistakes + 1
+                if difficulty >= 5:
+                    attack = input("Charge the alien: ")
+                    if 0 == len(normalise_input(attack)):
+                        mistakes = mistakes + 1
+                    elif "charge" != normalise_input(attack)[0]:
+                        mistakes = mistakes + 1
+                if difficulty >= 6:
+                    attack = input("STAB the alien!: ")
+                    if 0 == len(normalise_input(attack)):
+                        mistakes = mistakes + 1
+                    elif "stab" != normalise_input(attack)[0]:
+                        mistakes = mistakes + 1
+
+            if weapon == 2:
+                if difficulty >= 1:
+                    attack = input("CUT the alien!: ")
+                    if 0 == len(normalise_input(attack)):
+                        mistakes = mistakes + 1
+                    elif "cut" != normalise_input(attack)[0]:
+                        mistakes = mistakes + 1
+                if difficulty >= 2:
+                    attack = input("KICK the alien!: ")
+                    if 0 == len(normalise_input(attack)):
+                        mistakes = mistakes + 1
+                    elif "kick" != normalise_input(attack)[0]:
+                        mistakes = mistakes + 1
+                if difficulty >= 3:
+                    attack = input("STAND up!: ")
+                    if 0 == len(normalise_input(attack)):
+                        mistakes = mistakes + 1
+                    elif "stand" != normalise_input(attack)[0]:
+                        mistakes = mistakes + 1
+                if difficulty >= 4:
+                    attack = input("SLASH the alien!: ")
+                    if 0 == len(normalise_input(attack)):
+                        mistakes = mistakes + 1
+                    elif "slash" != normalise_input(attack)[0]:
+                        mistakes = mistakes + 1
+                if difficulty >= 5:
+                    attack = input("Charge the alien!: ")
+                    if 0 == len(normalise_input(attack)):
+                        mistakes = mistakes + 1
+                    elif "charge" != normalise_input(attack)[0]:
+                        mistakes = mistakes + 1
+                if difficulty >= 6:
+                    attack = input("STAB the alien!: ")
+                    if 0 == len(normalise_input(attack)):
+                        mistakes = mistakes + 1
+                    elif "stab" != normalise_input(attack)[0]:
+                        mistakes = mistakes + 1
+
+            if time.time() < timeout and mistakes <=2:
+                won = True
+                print("you beat the alien back and managed to run to the next room...")
+            else:
+                Won = False
+
+            if Won == True:
                 alien_injuries = alien_injuries + 1
                 if(is_valid_exit(exits, "north")):
                     current_room = rooms[exits["north"]]
