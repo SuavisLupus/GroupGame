@@ -114,7 +114,7 @@ room_research = {
     "name": "Research Lab",
 
     "description":
-    """description""",
+    """Strange plants and creatures are scattered in glass containers throughout the room, you are\n acutely aware that some of the containers lie broken and empty........ Looking around more you start to fully realise the extent of\n the mess; pages of notes, chemicals, and lab equipment mix with the blood and the bodies of the main research team. Only one\n terminal is still in working order, the others having been seemingly smashed apart in the struggle.""",
 
     "exits": {"east": "Hallway27", "west": "Hallway26"},
 
