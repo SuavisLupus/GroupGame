@@ -1,4 +1,5 @@
 import tkinter as tk
+from game import *
 
 # Description: timer, separate window, using tkinter widget
 # http://infohost.nmt.edu/tcc/help/pubs/tkinter/web/index.html
@@ -36,23 +37,28 @@ class TimerWidget(tk.Tk):
         self.label = tk.Label(self, text="", width=50)
         self.label.pack()
         self.wm_title("Oxygen Tank")
+        self.wm_iconbitmap('new.ico')
         global remaining
         self.remaining = 0
         # 20 minutes
-        self.countdown(1200)
+        self.countdown(600)
 
     def countdown(self, remaining=None):
+        global player_alive
+
         if remaining is not None:
             self.remaining = remaining
 
         if self.remaining <= 0:
-            self.label.configure(fg='red', text="Time's up, player is dead!")
+            self.label.configure(fg='red', bg='black', text="Time's up, player is dead!")
             self.remaining = 0
-            print('Player is dead')
+            player_alive = False
+            death(player_alive)
+            #print('Player is dead')
             # kill player
 
         else:
-            self.label.configure(fg='green', text="Oxygen tank: %d seconds left until depletion" % self.remaining)
+            self.label.configure(fg='green', bg='black', text="Oxygen tank: %d seconds left until depletion" % self.remaining)
             self.remaining = self.remaining - 1
             self.after(1000, self.countdown)
 

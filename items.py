@@ -41,12 +41,3 @@ item_airlock = {
 
 	"weight": "0.0"
 }
-
-#o	Escape Pod
-#	Fuel tanks
-#	Airlock break code
-#	Oxygen Filter
-#	Power Pack
-#	Distress beacon:
-#•	Cable
-#•	Relay
