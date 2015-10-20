@@ -4,20 +4,20 @@ item_screwdriver = {
     "name": "Screwdriver",
 
     "description":
-    """a handy tool for repairing... or stabbing""",
+    """A handy tool for repairing... or stabbing""",
 
     "weight": "0.1"
 }
 
 item_knife = {
-	"id": "knife",
+    "id": "knife",
 
-	"name": "Knife",
+    "name": "Knife",
 
-	"description":
-	"""a long sharp blade used by the chef to cut meat""",
+    "description":
+	"""A long sharp blade used by the chef to cut meat""",
 	
-	"weight": 0.2
+	"weight": "0.2"
 }
 
 item_fuel = {
@@ -31,13 +31,42 @@ item_fuel = {
 	"weight": "1.2"
 }
 
-item_airlock = {
+item_code = {
 	"id": "code",
 
 	"name": "879834",
 
-	"description":
-	"its a code...",
+	"description": "A code used to activate the escape pod",
 
 	"weight": "0.0"
+}
+
+item_oxygen_filter = {
+	"id": "oxygen_filter",
+
+	"name": "Oxygen Filter",
+
+	"description": "A device that converts excess Carbon Dioxide into Oxygen",
+
+	"weight": "1.0"
+}
+
+item_cable = {
+	"id": "cable",
+
+	"name": "Cable",
+
+	"description": "A cable that could be used to connect electronic items together",
+
+	"weight": "0.1"
+}
+
+item_distress_beacon = {
+	"id": "distress_beacon",
+
+	"name": "Distress Beacon",
+
+	"description": "A beacon that transmits your current location on all emergency channels",
+
+	"weight": "3.0"
 }
