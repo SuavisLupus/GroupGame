@@ -696,16 +696,16 @@ def alien_move(alien_current_room):
 
 
     if intelect == 1:
-        if(is_valid_exit(exits,"north")):
+        if(is_valid_exit(exits,"north")) and move(exits,direction)["name"] != "Cupboard":
             if current_room == move(exits,"north"):
                 return rooms[exits["north"]]
-        elif(is_valid_exit(exits,"east")):
+        elif(is_valid_exit(exits,"east")) and move(exits,direction)["name"] != "Cupboard":
             if current_room == move(exits,"east"):
                 return rooms[exits["east"]]
-        elif(is_valid_exit(exits,"south")):
+        elif(is_valid_exit(exits,"south")) and move(exits,direction)["name"] != "Cupboard":
             if current_room == move(exits,"south"):
                 return rooms[exits["south"]]
-        elif(is_valid_exit(exits,"west")):
+        elif(is_valid_exit(exits,"west")) and move(exits,direction)["name"] != "Cupboard":
             if current_room == move(exits,"west"):
                 return rooms[exits["west"]]
         
@@ -725,7 +725,7 @@ def alien_move(alien_current_room):
         if current_room == rooms["stairdown"] and number == 1:
             direction = "down"
 
-        if(is_valid_exit(exits,direction)):
+        if(is_valid_exit(exits,direction)) and move(exits,direction)["name"] != "Cupboard":
             return rooms[exits[direction]]
         else:
             return alien_current_room
