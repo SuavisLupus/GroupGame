@@ -4,9 +4,7 @@ room_cryo = {
     "name": "Cryo",
 
     "description":
-    """Taking a look around the room you realise that it is mostly how you remember it. Cryo bays for 60\
-    \n crew line the walls, all eerily empty. The fluorescent blue lights are mostly steady, and the terminal\
-    \n is humming softly\n in the corner...not literally, its a metaphor.""",
+    """Taking a look around the room you realise that it is mostly how you remember it.\n Cryo bays for 60 crew line the walls, all eerily empty. The fluorescent blue\n lights are mostly steady, and the terminal is humming softly\n in the corner... not literally, its a metaphor.""",
 
     "exits": {"east": "Hallway1"},
 
@@ -17,9 +15,7 @@ room_life = {
     "name": "Life Support",
 
     "description":
-    """The life support room has seen better days. Sparks fly from the system, revealing the walls in sad \
-    \nflashes of light and leaving dark and shady corners throughout. You squint your eyes to see, a faint \
-    \nmessage written on the wall “ + " FORGIVE ME… ” + " There is a distinct smell of bacon in the air. """,
+    """The life support room has seen better days. Sparks fly from the system, revealing the walls in sad \nflashes of light and leaving dark and shady corners throughout. You squint your eyes to see, a faint message written on the\n wall “FORGIVE ME...” There is a distinct smell of bacon in the air. """,
 
     "exits": {"east": "Hallway22", "west": "Hallway1"},
 
@@ -30,10 +26,7 @@ room_engine = {
     "name": "Engine Room",
 
     "description":
-    """The engines lay ominously silent for the first time Kirill could remember, the only noise being the\
-    \n dismal creaking of the ship....Should ships sound like that? You hear the loud sounds of snapping metal \
-    \nin the distance, followed\n by what could only be described as the twanging of a giant rubber band....nope\
-    \n....probably not.""",
+    """The engines lay ominously silent for the first time Kirill could remember, the only noise being the\n dismal creaking of the ship.. Should ships sound like that? You hear the loud sounds of snapping metal in the distance, followed\n by what could only be described as the twanging of a giant rubber band...nope...probably not.""",
 
     "exits": {"north": "Hallway1"},
 
@@ -55,9 +48,7 @@ room_escape = {
     "name": "Escape Pod",
 
     "description":
-    """Tens of corpses scattered across the floor in various states and....pieces. It reminds you of rugby.\
-    \n  The crew must have ran here once they knew Wales had lost as all but one of the escape pods were gone, \
-    \n clearly not everyone made it. """,
+    """Tens of corpses scattered across the floor in various states and...pieces. It reminds you of rugby.\n  The crew must have ran here once they knew Wales had lost as all but one of the escape pods were gone, \n clearly not everyone made it. """,
 
     "exits": {"south": "Hallway9"},
 
@@ -68,10 +59,7 @@ room_bridge = {
     "name": "Bridge",
 
     "description":
-    """The massive windows of the bridge are the first things that greet you, but they are not as they once were.\
-    \nLarge cracks run through them, and you start to feel lightheaded as you notice the hissing of oxygen leaving\
-    \nthe room. Blood has pooled around the Captain’s chair in the centre of the room and you feel relieved when\
-    \nthere isnt a body sa- oh wait nope, thats definitely a severed hand right there.""",
+    """The massive windows of the bridge are the first things that greet you, but they are not as they \nonce were. Large cracks run through them, and you start to feel lightheaded \n as you notice the hissing of oxygen leaving the room. \n Blood has pooled around the Captain’s chair in the centre of the room and you feel relieved \n when there isn’t a body sa- oh wait nope, that’s definitely a severed hand right there.""",
 
     "exits": {"south": "Hallway13"},
 
@@ -104,11 +92,7 @@ room_kitchen = {
     "name": "Kitchen",
 
     "description":
-    """Multiple stoves and ovens line one side of the room, with various kitchen tools and utensils scattered\
-    \n throughout. As you look around you start to remember you used to have a thing for the old cafeteria lady, \
-    \nDorothy. She was sexy as can be, legs as long as a runway, curves that would make an hour glass jealous. \
-    \nYou have many fond memories of this place and\n feel a deep warmth grow from within. You regret the mistakes\
-    \nthat have led to this day, the life you could have had....Was it hot in here? """,
+    """Multiple stoves and ovens line one side of the room, with various kitchen tools and utensils scattered\n throughout. As you look around you start to remember you used to have a thing for the old cafeteria lady, Dorothy. She was sexy as can \nbe, legs as long as a runway, curves that would make an hour glass jealous. You have many fond memories of this place and\n feel a deep warmth grow from within. You regret the\n mistakes that have led to this day, the life you could have had...Was it hot in here? """,
 
     "exits": {"south": "Hallway16", "west": "Cafeteria"},
 
@@ -130,11 +114,7 @@ room_research = {
     "name": "Research Lab",
 
     "description":
-    """Strange plants and creatures are scattered in glass containers throughout the room, you are acutely aware\
-    \nthat some of the containers lie broken and empty........ Looking around more you start to fully realise the \
-    \nextent of the mess; pages of notes, chemicals, and lab equipment mix with the blood and the bodies of the main\
-    \nresearch team. Only one terminal is still in working order, the others having been seemingly smashed apart in \
-    \nthe struggle.""",
+    """Strange plants and creatures are scattered in glass containers throughout the room, you are\n acutely aware that some of the containers lie broken and empty........ Looking around more you start to fully realise the extent of\n the mess; pages of notes, chemicals, and lab equipment mix with the blood and the bodies of the main research team. Only one\n terminal is still in working order, the others having been seemingly smashed apart in the struggle.""",
 
     "exits": {"east": "Hallway27", "west": "Hallway26"},
 
@@ -157,11 +137,9 @@ room_hallway1 = {
     "name": "Hallway",
 
     "description":
-    """The hallway shows signs of a recent struggle, with bullet holes and blood marking the now-dirty walls.\
-    \n  To the west is life support, the south holds the engine room, to the west is the cryo chamber, and to\
-    \nthe north lies the rest of the ship.""",
+    """A long bland hallway...""",
 
-    "exits": {"north": "Hallway3", "east": "Life", "south": "Engine", "west": "Cryo"},
+    "exits": {"north": "Hallway3", "east": "Life", "south": "Enigne", "west": "Cryo"},
 
     "items": [] 
 }
@@ -170,9 +148,7 @@ room_hallway3 = {
     "name": "Hallway",
 
     "description":
-    """The hallway lights flicker irregularly, lighting up things best left unseen. The control room is to the \
-    \nnorth, east is the maintenance room, to the west you see a long hallway leading deep into the ship, and to\
-    \nthe south is the cryo room amoungst other things.""",
+    """A long bland hallway...""",
 
     "exits": {"north": "Control", "east": "Maintenance", "south": "Hallway1", "west": "Hallway4"},
 
@@ -183,8 +159,7 @@ room_hallway4 = {
     "name": "Hallway",
 
     "description":
-    """Grim shadows play across the wall, with the hallway extending from west to east. You see the doors of a\
-    \ncupboard to the north""",
+    """A long bland hallway...""",
 
     "exits": {"north": "Cupboard1", "east": "Hallway3", "west": "Hallway5"},
 
@@ -195,8 +170,7 @@ room_hallway5 = {
     "name": "Hallway",
 
     "description":
-    """You see a curve in the hallway to the west, to the south is a cupboard in the east you can distantly see the\
-    \ndoors of the maintenance room. """,
+    """A long bland hallway...""",
 
     "exits": {"east": "Hallway4", "south": "Cupboard2", "west": "Hallway6"},
 
@@ -207,8 +181,7 @@ room_hallway6 = {
     "name": "Hallway",
 
     "description":
-    """You have reached the south-western corner of the ships hallways. There appears to be the remains of a brief barricade \
-    \nscattered around the floor mixed with the bodies of various crew-members, clearly it wasnt enough.""",
+    """A long bland hallway...""",
 
     "exits": {"north": "Hallway8", "east": "Hallway5"},
 
@@ -219,8 +192,7 @@ room_hallway8 = {
     "name": "Hallway",
 
     "description":
-    """Eerie noises echo throughout the ship.......You see the doors of the escape pod at the northern end of the corridor!\
-    \nTo the west are the doors of yet another cupboard, the hallway curves away in the south.""",
+    """A long bland hallway...""",
 
     "exits": {"north": "Hallway9", "south": "Hallway6", "west": "Cupboard6"},
 
@@ -231,8 +203,7 @@ room_hallway9 = {
     "name": "Hallway",
 
     "description":
-    """The escape-pod room lies directly infront of you, and the hallway extends far both to the east and south. \
-    \n You remember the kitchen and stairs to the upper deck were definately to the east somewhere....""",
+    """A long bland hallway...""",
 
     "exits": {"north": "Escape", "east": "Hallway10", "south": "Hallway8"},
 
@@ -243,7 +214,7 @@ room_hallway10 = {
     "name": "Hallway",
 
     "description":
-    """The hallway continues on into the distance to the east, a corner lies to the west...""",
+    """A long bland hallway...""",
 
     "exits": {"east": "Hallway12", "west": "Hallway9"},
 
@@ -254,10 +225,7 @@ room_hallway12 = {
     "name": "Hallway",
 
     "description":
-    """The crossroads of the space stations hallway network; the once fine central location now gives off the aura\
-    \nof a massacre, with not a single alien body to be seen amoungst the many dead....half of the station\
-    \nmust have died here! To the south you see the stairwell ascending upwards, and to the east you see the doors \
-    \nof the stations bridge. The hallway extends in each direction.""",
+    """A long bland hallway...""",
 
     "exits": {"north": "Hallway13", "east": "Hallway14", "south": "stairdown", "west": "Hallway10"},
 
@@ -522,7 +490,7 @@ room_stairsUp = {
 rooms = {
     "Cryo": room_cryo,
     "Life": room_life,
-    "Engine": room_engine,
+    "Enigne": room_engine,
     "Maintenance": room_maintenance,
     "Control": room_control,
     "Escape": room_escape,
