@@ -4,7 +4,7 @@ room_cryo = {
     "name": "Cryo",
 
     "description":
-    """This is where you slept while everyone on board was devoured.""",
+    """Taking a look around the room you realise that it is mostly how you remember it.\n Cryo bays for 60 crew line the walls, all eerily empty. The fluorescent blue\n lights are mostly steady, and the terminal is humming softly\n in the corner….not literally, its a metaphor.""",
 
     "exits": {"east": "Hallway1"},
 
@@ -15,7 +15,7 @@ room_life = {
     "name": "Life Support",
 
     "description":
-    """description""",
+    """The life support room has seen better days. Sparks fly from the system, revealing the walls in sad \nflashes of light and leaving dark and shady corners throughout. You squint your eyes to see, a faint message written on the\n wall “ + " FORGIVE ME… ” + " There is a distinct smell of bacon in the air. """,
 
     "exits": {"east": "Hallway22", "west": "Hallway1"},
 
@@ -26,11 +26,11 @@ room_engine = {
     "name": "Engine Room",
 
     "description":
-    """description""",
+    """The engines lay ominously silent for the first time Kirill could remember, the only noise being the\n dismal creaking of the ship….. Should ships sound like that? You hear the loud sounds of snapping metal in the distance, followed\n by what could only be described as the twanging of a giant rubber band…….nope….probably not.""",
 
     "exits": {"north": "Hallway1"},
 
-    "items": []
+    "items": [item_fuel]
 }
 
 room_maintenance = {
@@ -41,14 +41,14 @@ room_maintenance = {
 
     "exits": {"east": "Hallway20", "west": "Hallway3"},
 
-    "items": []
+    "items": [item_screwdriver]
 }
 
 room_escape = {
     "name": "Escape Pod",
 
     "description":
-    """description""",
+    """Tens of corpses scattered across the floor in various states and…...pieces. It reminds you of rugby.\n  The crew must have ran here once they knew Wales had lost as all but one of the escape pods were gone, \n clearly not everyone made it. """,
 
     "exits": {"south": "Hallway9"},
 
@@ -59,7 +59,7 @@ room_bridge = {
     "name": "Bridge",
 
     "description":
-    """description""",
+    """The massive windows of the bridge are the first things that greet you, but they are not as they \nonce were. Large cracks run through them, and you start to feel lightheaded \n as you notice the hissing of oxygen leaving the room. \n Blood has pooled around the Captain’s chair in the centre of the room and you feel relieved \n when there isnt a body sa- oh wait nope, thats definitely a severed hand right there.""",
 
     "exits": {"south": "Hallway13"},
 
@@ -89,14 +89,14 @@ room_control = {
 }
 
 room_kitchen = {
-    "name": "name",
+    "name": "Kitchen",
 
     "description":
-    """description""",
+    """Multiple stoves and ovens line one side of the room, with various kitchen tools and utensils scattered\n throughout. As you look around you start to remember you used to have a thing for the old cafeteria lady, Dorothy. She was sexy as can \nbe, legs as long as a runway, curves that would make an hour glass jealous. You have many fond memories of this place and\n feel a deep warmth grow from within. You regret the\n mistakes that have led to this day, the life you could have had…..Was it hot in here? """,
 
     "exits": {"south": "Hallway16", "west": "Cafeteria"},
 
-    "items": []
+    "items": [item_knife]
 }
 
 room_relay = {
@@ -114,7 +114,7 @@ room_research = {
     "name": "Research Lab",
 
     "description":
-    """description""",
+    """Strange plants and creatures are scattered in glass containers throughout the room, you are\n acutely aware that some of the containers lie broken and empty........ Looking around more you start to fully realise the extent of\n the mess; pages of notes, chemicals, and lab equipment mix with the blood and the bodies of the main research team. Only one\n terminal is still in working order, the others having been seemingly smashed apart in the struggle.""",
 
     "exits": {"east": "Hallway27", "west": "Hallway26"},
 
