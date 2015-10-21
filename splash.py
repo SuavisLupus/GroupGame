@@ -2,7 +2,7 @@
 
 import os
 import time
-from game import*
+from game import *
 
 string1 = "\n\n\t\t\t     The year is 2231"
 string1 += "\n\n\tSpace travel has advanced sufficiently for corporations"
@@ -72,13 +72,13 @@ string7 += "\n\t\t\t\t   before."
 string7 += "\n\n\t\t\"check\": checks an adjacent room for a threat"
 string7 += "\n\n\t\t\"hide\": hide from threats in cupboards"
 
-endTime1 = time.time() + 1*10
-endTime2 = time.time() + 1*23
-endTime3 = time.time() + 1*33
-endTime4 = time.time() + 1*37
-endTime5 = time.time() + 1*47
-endTime6 = time.time() + 1*57
-endTime7 = time.time() + 1*62
+endTime1 = time.time() + 1*12
+endTime2 = time.time() + 1*26
+endTime3 = time.time() + 1*37
+endTime4 = time.time() + 1*41
+endTime5 = time.time() + 1*49
+endTime6 = time.time() + 1*61
+endTime7 = time.time() + 1*67
 
 printed1 = False
 printed2 = False
@@ -129,4 +129,8 @@ while True:
 			printed7 = True
 	elif(time.time() > endTime7):
 		break
+# Start Oxygen Tank countdown
+TimerWidget()
+
+# Start Main
 main()
