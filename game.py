@@ -11,7 +11,6 @@ from spam import *
 import time
 
 
-
 def list_of_items(items):
     """This function takes a list of items (see items.py for the definition) and
     returns a comma-separated list of item names (as a string). For example:

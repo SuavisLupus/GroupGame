@@ -19,7 +19,7 @@ def filter_words(words, skip_words):
 
     >>> filter_words(["help", "me", "please"], ["me", "please"])
     ['help']
-    
+
     >>> filter_words(["go", "south"], skip_words)
     ['go', 'south']
 
@@ -29,7 +29,7 @@ def filter_words(words, skip_words):
     """
 
     word_filter = [each_word for each_word in words if each_word not in skip_words]
-    return word_filter      
+    return word_filter
 
 def remove_punct(text):
     """This function is used to remove all punctuation

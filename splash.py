@@ -75,10 +75,10 @@ string7 += "\n\n\t\t\"hide\": hide from threats in cupboards"
 endTime1 = time.time() + 1*12
 endTime2 = time.time() + 1*26
 endTime3 = time.time() + 1*37
-endTime4 = time.time() + 1*41
-endTime5 = time.time() + 1*49
+endTime4 = time.time() + 1*46
+endTime5 = time.time() + 1*51
 endTime6 = time.time() + 1*61
-endTime7 = time.time() + 1*67
+endTime7 = time.time() + 1*72
 
 printed1 = False
 printed2 = False
@@ -88,42 +88,40 @@ printed5 = False
 printed6 = False
 printed7 = False
 
-os.system('cls')
-
 while True:
 	#os.system('cls')
 	if(time.time() < endTime1):
-		if(printed1 == False):
+		if(printed1 is False):
 			os.system('cls')
 			print(string1)
 			printed1 = True
 	elif(time.time() < endTime2):
-		if(printed2 == False):
+		if(printed2 is False):
 			os.system('cls')
 			print(string2)
 			printed2 = True
 	elif(time.time() < endTime3):
-		if(printed3 == False):
+		if(printed3 is False):
 			os.system('cls')
 			print(string3)
 			printed3 = True
 	elif(time.time() < endTime4):
-		if(printed4 == False):
+		if(printed4 is False):
 			os.system('cls')
 			print(string4)
 			printed4 = True
 	elif(time.time() < endTime5):
-		if(printed5 == False):
+		if(printed5 is False):
 			os.system('cls')
 			print(string5)
 			printed5 = True
 	elif(time.time() < endTime6):
-		if(printed6 == False):
+		if(printed6 is False):
 			os.system('cls')
 			print(string6)
 			printed6 = True
 	elif(time.time() < endTime7):
-		if(printed7 == False):
+		if(printed7 is False):
 			os.system('cls')
 			print(string7)
 			printed7 = True
