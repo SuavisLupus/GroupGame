@@ -219,9 +219,11 @@ def print_menu(exits, room_items, inv_items):
         # Print the exit name and where it leads to
         print_exit(direction, exit_leads_to(exits, direction))
     for rmItems in room_items:
-        print("TAKE " + rmItems["id"].upper() + " to take " + rmItems["name"] + "." )    
+        if rmItems["weight"] != "5.1":
+            print("TAKE " + rmItems["id"].upper() + " to take " + rmItems["name"] + "." )    
     for loot in inv_items:
         print("DROP " + loot["id"].upper() + " to drop " + loot["name"] + ".")
+    print("INSPECT to inspect any item in the room or in inventory")
     for items in inv_items:
         if items["id"] == "wire":
             wire = True
@@ -320,6 +322,14 @@ def execute_take(item_id):
 
     endturn = endturn + 1
     
+def exectue_inspect(item_id):
+    for item in current_room["items"]:
+        if item["id"] == item_id:
+            print(item["description"])
+    for item in inventory:
+        if item["id"] == item_id:
+            print(item["description"])
+    return
 
 def execute_drop(item_id):
     """This function takes an item_id as an argument and moves this item from the
@@ -395,6 +405,7 @@ def execute_command(command):
     global alien2_current_room
     global alien3_alive
     global alien3_current_room
+    global player_alive
 
     if 0 == len(command):
         return
@@ -431,6 +442,7 @@ def execute_command(command):
         if alien3_alive == True:
             alien3_current_room = alien_move(alien3_current_room)
         endturn = 0
+
     elif command[0] == "craft":
         wire = False
         emmiter = False
@@ -447,6 +459,12 @@ def execute_command(command):
             inventory.remove(item_wire)
             inventory.remove(item_IR_emmiter)
             inventory.remove(item_amplifier)
+
+    elif command[0] == "inspect":
+        if len(command) > 1:
+            exectue_inspect(command[1])
+        else:
+            print("inspect what?")
     else:
         print("This makes no sense.")
 
@@ -659,6 +677,7 @@ def menu(exits, room_items, inv_items):
         if alien1_alive is True:
             print("an alien spots you, what do you do?...")
             alien1_injuries = encounter(alien1_injuries)
+            endturn = endturn + 2
             if alien1_injuries >= 4:
                 alien1_alive = False
             return ""
@@ -669,6 +688,7 @@ def menu(exits, room_items, inv_items):
         if alien2_alive == True:
             print("an alien spots you, what do you do?...")
             alien2_injuries = encounter(alien2_injuries)
+            endturn = endturn + 2
             if alien2_injuries >= 4:
                 alien2_alive = False
             return ""
@@ -679,6 +699,7 @@ def menu(exits, room_items, inv_items):
         if alien3_alive == True:
             print("an alien spots you, what do you do?...")
             alien3_injuries = encounter(alien3_injuries)
+            endturn = endturn + 2
             if alien3_injuries >= 4:
                 alien3_alive = False
             return ""
@@ -791,14 +812,29 @@ def death(player_alive):
 
 def check_win(current_room):
     global player_alive
-
+    global Water_fixed
     fuel = False
     oxygen = False
     cable = False
     distress = False
+    screwdriver = False
+
+    pipe = False
+    wrench = False
+    wire = False
+    clothes = False
+
     global alien1_alive
     global alien2_alive
     global alien3_alive
+
+    for items in inventory:
+        if items["id"] == "wrench":
+            wrench = True
+        if items["id"] == "screwdriver":
+            screwdriver = True
+        if items["id"] == "clothes":
+            clothes = True
 
     for items in rooms["Escape"]["items"]:
         if items["id"] == "fuel":
@@ -810,7 +846,40 @@ def check_win(current_room):
         if items["id"] == "beacon":
             distress = True
 
-    if fuel == True and oxygen == True and cable == True and current_room == rooms["Escape"]:
+    for items in rooms["Life"]["items"]:
+        if items["id"] == "pipe":
+            pipe = True
+        if items["id"] == "wire":
+            wire = True
+
+    if pipe == True and wire == True and wrench == True and current_room == rooms["Life"]:
+        Water_fixed = True
+        rooms["Life"]["items"].remove(item_pipe)
+        rooms["Life"]["items"].remove(item_wire)
+        print("you use the wrench and the pipe to fix the broken anti-fire system and \nuse the wire to repair the circuit boards")
+        rooms["Life"]["description"] = "The life support room has seen better days. Sparks fly from the system, revealing the walls in sad \nflashes of light and leaving dark and shady corners throughout. You squint your eyes to see, a faint message written on the\nwall FORGIVE ME... The anti-fire system is running efficiently, \nnow it will douse any fire with a ship wide monsoon"
+        print("now just to start the fire...")
+
+
+    if rooms["Life"]["description"] == "The life support room has seen better days. Sparks fly from the system, revealing the walls in sad \nflashes of light and leaving dark and shady corners throughout. You squint your eyes to see, a faint message written on the\nwall FORGIVE ME... The anti-fire system is running efficiently, \nnow it will douse any fire with a ship wide monsoon" and current_room == rooms["Kitchen"]:
+        command = menu(current_room["exits"], current_room["items"], inventory)
+
+        if 0 == len(command):
+            return
+
+        if command[0] == "burn":
+            if len(command) > 1:
+                if command [1] == "clothes":
+                    print("you place your clothes on the hob and watch them ignite...")
+                    print("the smoke causes the alarm to go off and the sprinklers rain down hard.")
+                    print("you hear distant distorted screams...")
+                    alien1_alive = False
+                    alien2_alive = False
+                    alien3_alive = False
+        else:
+            execute_command(command)
+
+    if fuel == True and oxygen == True and cable == True and screwdriver == True and current_room == rooms["Escape"]:
         command = menu(current_room["exits"], current_room["items"], inventory)
 
         if 0 == len(command):
@@ -827,6 +896,7 @@ def check_win(current_room):
                 return False
         else:
             execute_command(command)
+
     if alien1_alive == False:
         if alien2_alive == False:
             if alien3_alive == False:
@@ -837,6 +907,7 @@ def check_win(current_room):
 
 # This is the entry point of our program
 def main():
+    Water_fixed = False
     global endturn
     global alien1_current_room
     global alien2_current_room
