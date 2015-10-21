@@ -100,3 +100,53 @@ item_amplifier ={
 
 	"weight": "0.5"
 }
+
+item_wrench = {
+	"id": "wrench",
+
+	"name": "wrench",
+
+	"description": "for turning bolts",
+
+	"weight": "1.0"
+}
+
+item_clothes = {
+	"id": "clothes",
+
+	"name": "clothes",
+
+	"description": "The clothes you wore before Cryo sleep",
+
+	"weight": "0.0"
+}
+
+item_pipe = {
+	"id": "pipe",
+
+	"name": "pipe",
+
+	"description": "spare pipe for fixing the water cirulation",
+
+	"weight": "1.5"
+}
+
+item_oven = {
+	"id": "oven",
+
+	"name": "oven",
+
+	"description": "an oven, its still on... could probably BURN something in here...",
+
+	"weight": "5.1"
+}
+
+item_research_screen = {
+	"id": "research",
+
+	"name": "Research Screen",
+
+	"description": "water...",
+
+	"weight": "5.1"
+}
