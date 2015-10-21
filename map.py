@@ -19,7 +19,7 @@ room_life = {
 
     "exits": {"east": "Hallway22", "west": "Hallway1"},
 
-    "items": []
+    "items": [item_oxygen_filter]
 }
 
 room_engine = {
@@ -59,7 +59,7 @@ room_bridge = {
     "name": "Bridge",
 
     "description":
-    """The massive windows of the bridge are the first things that greet you, but they are not as they \nonce were. Large cracks run through them, and you start to feel lightheaded \n as you notice the hissing of oxygen leaving the room. \n Blood has pooled around the Captain’s chair in the centre of the room and you feel relieved \n when there isn’t a body sa- oh wait nope, that’s definitely a severed hand right there.""",
+    """The massive windows of the bridge are the first things that greet you, but they are not as they \nonce were. Large cracks run through them, and you start to feel lightheaded \n as you notice the hissing of oxygen leaving the room. \n Blood has pooled around the Captains chair in the centre of the room and you feel relieved \n when there isn’t a body sa- oh wait nope, that’s definitely a severed hand right there.""",
 
     "exits": {"south": "Hallway13"},
 
@@ -85,7 +85,7 @@ room_control = {
 
     "exits": {"north": "stairdown", "south": "Hallway3"},
 
-    "items": []
+    "items": [item_IR_emmiter, item_code]
 }
 
 room_kitchen = {
@@ -107,7 +107,7 @@ room_relay = {
 
     "exits": {"east": "Hallway23", "south": "Cupboard7"},
 
-    "items": []
+    "items": [item_wire]
 }
 
 room_research = {
@@ -118,7 +118,7 @@ room_research = {
 
     "exits": {"east": "Hallway27", "west": "Hallway26"},
 
-    "items": []
+    "items": [item_amplifier]
 }
 
 room_server = {
@@ -129,7 +129,7 @@ room_server = {
 
     "exits": {"west": "Hallway30", "south": "Cupboard8"},
 
-    "items": []
+    "items": [item_cable]
 }
 
 #Hallways

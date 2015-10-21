@@ -204,6 +204,15 @@ def print_menu(exits, room_items, inv_items):
     What do you want to do?
 
     """
+    wire = False
+    emmiter = False
+    amplifier = False
+
+    cable = False
+    beacon = False
+    oxygen = False
+    fuel = False        
+
     print("You can:")
     # Iterate over available exits
     for direction in exits:
@@ -213,7 +222,34 @@ def print_menu(exits, room_items, inv_items):
         print("TAKE " + rmItems["id"].upper() + " to take " + rmItems["name"] + "." )    
     for loot in inv_items:
         print("DROP " + loot["id"].upper() + " to drop " + loot["name"] + ".")
-    
+    for items in inv_items:
+        if items["id"] == "wire":
+            wire = True
+        if items["id"] == "emmiter":
+            emmiter = True
+        if items ["id"] == "amplifier":
+            amplifier = True
+    if wire == True and emmiter == True and amplifier == True:
+        print("CRAFT to craft a distress beacon")
+
+    fuel = False
+    oxygen = False
+    cable = False
+    distress = False
+    for items in rooms["Escape"]["items"]:
+        if items["id"] == "fuel":
+            fuel = True
+        if items["id"] == "filter":
+            oxygen = True
+        if items["id"] == "cable":
+            cable = True
+        if items["id"] == "beacon":
+            distress = True
+
+    if cable == True and oxygen == True and fuel == True:
+        print("go to the escape pod and enter the airlock code to escape...")
+
+
     print("What do you want to do?")
 
 
@@ -395,7 +431,22 @@ def execute_command(command):
         if alien3_alive == True:
             alien3_current_room = alien_move(alien3_current_room)
         endturn = 0
-
+    elif command[0] == "craft":
+        wire = False
+        emmiter = False
+        amplifer = False
+        for items in inventory:
+            if items["id"] == "wire":
+                wire = True
+            if items["id"] == "emmiter":
+                emmiter = True
+            if items ["id"] == "amplifier":
+                amplifier = True
+        if wire == True and emmiter == True and amplifier == True:
+            inventory.append(item_distress_beacon)
+            inventory.remove(item_wire)
+            inventory.remove(item_IR_emmiter)
+            inventory.remove(item_amplifier)
     else:
         print("This makes no sense.")
 
@@ -475,7 +526,7 @@ def encounter(alien_injuries):
                     elif "shove" != normalise_input(attack)[0]:
                         mistakes = mistakes + 1
                 if difficulty >= 5:
-                    attack = input("Charge the alien: ")
+                    attack = input("CHARGE the alien: ")
                     if 0 == len(normalise_input(attack)):
                         mistakes = mistakes + 1
                     elif "charge" != normalise_input(attack)[0]:
@@ -513,7 +564,7 @@ def encounter(alien_injuries):
                     elif "shove" != normalise_input(attack)[0]:
                         mistakes = mistakes + 1
                 if difficulty >= 5:
-                    attack = input("Charge the alien: ")
+                    attack = input("CHARGE the alien: ")
                     if 0 == len(normalise_input(attack)):
                         mistakes = mistakes + 1
                     elif "charge" != normalise_input(attack)[0]:
@@ -627,7 +678,7 @@ def menu(exits, room_items, inv_items):
     if alien3_current_room == current_room:
         if alien3_alive == True:
             print("an alien spots you, what do you do?...")
-            alien3_injuries = encounter(alien1_injuries)
+            alien3_injuries = encounter(alien3_injuries)
             if alien3_injuries >= 4:
                 alien3_alive = False
             return ""
@@ -670,7 +721,7 @@ def alien_move(alien_current_room):
 
     for items in inventory:
         if items["id"] == "screwdriver":
-            intelect = intelect + 1
+            intelect = 1
 
     if intelect == 0:
         if number == 1:
@@ -696,16 +747,16 @@ def alien_move(alien_current_room):
 
 
     if intelect == 1:
-        if(is_valid_exit(exits,"north")) and move(exits,direction)["name"] != "Cupboard":
+        if(is_valid_exit(exits,"north")) and move(exits,"north")["name"] != "Cupboard":
             if current_room == move(exits,"north"):
                 return rooms[exits["north"]]
-        elif(is_valid_exit(exits,"east")) and move(exits,direction)["name"] != "Cupboard":
+        elif(is_valid_exit(exits,"east")) and move(exits,"east")["name"] != "Cupboard":
             if current_room == move(exits,"east"):
                 return rooms[exits["east"]]
-        elif(is_valid_exit(exits,"south")) and move(exits,direction)["name"] != "Cupboard":
+        elif(is_valid_exit(exits,"south")) and move(exits,"south")["name"] != "Cupboard":
             if current_room == move(exits,"south"):
                 return rooms[exits["south"]]
-        elif(is_valid_exit(exits,"west")) and move(exits,direction)["name"] != "Cupboard":
+        elif(is_valid_exit(exits,"west")) and move(exits,"west")["name"] != "Cupboard":
             if current_room == move(exits,"west"):
                 return rooms[exits["west"]]
         
@@ -737,22 +788,74 @@ def death(player_alive):
         quit()
     else:
         pass
-    
+
+def check_win(current_room):
+    global player_alive
+
+    fuel = False
+    oxygen = False
+    cable = False
+    distress = False
+    global alien1_alive
+    global alien2_alive
+    global alien3_alive
+
+    for items in rooms["Escape"]["items"]:
+        if items["id"] == "fuel":
+            fuel = True
+        if items["id"] == "filter":
+            oxygen = True
+        if items["id"] == "cable":
+            cable = True
+        if items["id"] == "beacon":
+            distress = True
+
+    if fuel == True and oxygen == True and cable == True and current_room == rooms["Escape"]:
+        command = menu(current_room["exits"], current_room["items"], inventory)
+
+        if 0 == len(command):
+            return
+
+        if command[0] == "879834":
+            print("you jetison out into the cold of space...")
+            if distress == True:
+                print("your fixed distress beacon fires up and sends out a strong signal \n and soon enough galactic rescue pick you up... \n CONGRATULATIONS YOU WIN!!!")
+                return True
+            else: 
+                print("without any form of comunication you slowly starve to death...")
+                player_alive = False
+                return False
+        else:
+            execute_command(command)
+    if alien1_alive == False:
+        if alien2_alive == False:
+            if alien3_alive == False:
+                print("you finally managed to kill all of the aliens on board, you now await rescue...")
+                print("\n CONGRATULATIONS YOU WIN!!!")
+                return True
+    return False
+
 # This is the entry point of our program
 def main():
     global endturn
     global alien1_current_room
     global alien2_current_room
     global alien3_current_room
+    win = False
+
     # Main game loop
     while True:
         # Display game status (room description, inventory etc.)
-        if player_alive == False:
-            break
+        
 
         print_room(current_room)
         print_inventory_items(inventory)
+        win = check_win(current_room)
 
+        if win == True:
+            break
+        if player_alive == False:
+            break
         # Show the menu with possible actions and ask the player
         command = menu(current_room["exits"], current_room["items"], inventory)
 
@@ -770,6 +873,9 @@ def main():
                 endturn = 0
         else:
             endturn = 0
+        
+
+        
 
         
 
