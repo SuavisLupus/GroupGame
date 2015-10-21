@@ -4,25 +4,20 @@ import time
 def test(spamage):
     timeout = time.time() + 1*5   # 5 secs from now
     userInput = 0
-    test =1
     loopCounter = 1
-
     spamList = []
     survived = True
 
     while time.time() < timeout:
-        
-        userInput = input(str(loopCounter) + ") spam:")
+        userInput = input(str(loopCounter) + ") hit enter:")
         spamList.append(userInput)
 
         if time.time() > timeout:
             if(len(spamList) >= spamage):
-            	survived = True
+                survived = True
             else:
-               	survived = False
-
+                survived = False
             break
-        loopCounter += 1 
+        loopCounter += 1
 
-    return survived    
-    
+    return survived
