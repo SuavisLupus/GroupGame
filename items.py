@@ -15,9 +15,9 @@ item_knife = {
     "name": "Knife",
 
     "description":
-	"""A long sharp blade used by the chef to cut meat""",
-	
-	"weight": "0.2"
+    """A long sharp blade used by the chef to cut meat""",
+
+    "weight": "0.2"
 }
 
 item_fuel = {

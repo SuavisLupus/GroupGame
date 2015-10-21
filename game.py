@@ -399,11 +399,12 @@ def execute_command(command):
     else:
         print("This makes no sense.")
 
+
 def encounter(alien_injuries):
     global current_room
     global player_alive
 
-    exits=current_room["exits"]
+    exits = current_room["exits"]
 
     while True:
 
@@ -417,7 +418,7 @@ def encounter(alien_injuries):
         if command[0] == "run":
             print("press enter to run!!")
 
-            if test(randrange(1,30)) == True:
+            if test(randrange(1, 30)) is True:
 
                 if(is_valid_exit(exits, "north")):
                     current_room = rooms[exits["north"]]
@@ -544,13 +545,13 @@ def encounter(alien_injuries):
                     elif "slash" != normalise_input(attack)[0]:
                         mistakes = mistakes + 1
 
-            if time.time() < timeout and mistakes <=2:
+            if time.time() < timeout and mistakes <= 2:
                 won = True
                 print("you beat the alien back and managed to run to the next room...")
             else:
                 Won = False
 
-            if Won == True:
+            if Won is True:
                 alien_injuries = alien_injuries + 1
                 if(is_valid_exit(exits, "north")):
                     current_room = rooms[exits["north"]]
@@ -564,7 +565,7 @@ def encounter(alien_injuries):
                 elif(is_valid_exit(exits, "west")):
                     current_room = rooms[exits["west"]]
                     return alien_injuries
-            elif randrange(1,101) >= 70:
+            elif randrange(1, 101) >= 70:
 
                 print("you distract it long enough to escape")
 
@@ -604,7 +605,7 @@ def menu(exits, room_items, inv_items):
 
     # Check for alien presense
     if alien1_current_room == current_room:
-        if alien1_alive == True:
+        if alien1_alive is True:
             print("an alien spots you, what do you do?...")
             alien1_injuries = encounter(alien1_injuries)
             if alien1_injuries >= 4:

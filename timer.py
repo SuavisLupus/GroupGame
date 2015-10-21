@@ -27,8 +27,8 @@ class TimerWidget(tk.Tk):
         self.wm_iconbitmap('new.ico')
         global remaining
         self.remaining = 0
-        # 10 minutes oxygen
-        self.countdown(600)
+        # 15 minutes oxygen
+        self.countdown(900)
 
     def countdown(self, remaining=None):
         global player_alive

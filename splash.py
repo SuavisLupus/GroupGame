@@ -76,9 +76,9 @@ endTime1 = time.time() + 1*12
 endTime2 = time.time() + 1*26
 endTime3 = time.time() + 1*37
 endTime4 = time.time() + 1*46
-endTime5 = time.time() + 1*51
-endTime6 = time.time() + 1*61
-endTime7 = time.time() + 1*72
+endTime5 = time.time() + 1*58
+endTime6 = time.time() + 1*67
+endTime7 = time.time() + 1*77
 
 printed1 = False
 printed2 = False
