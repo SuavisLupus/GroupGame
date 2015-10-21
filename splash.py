@@ -2,7 +2,10 @@
 
 import os
 import time
-from game import *
+from game import*
+
+
+
 
 string1 = "\n\n\t\t\t     The year is 2231"
 string1 += "\n\n\tSpace travel has advanced sufficiently for corporations"
@@ -49,7 +52,7 @@ string5 = "\n\n\t\tYou wake up from cryo, dazed, cold and alone."
 string5 += "\n\tAs the door opens you fall to the floor onto the metal grating."
 
 string5 += "\n\n\tYou call out for help as you lay on the floor thawing from"
-string5 += "\n\t\tcryo, hear nothing but the hum of the engines/machinery."
+string5 += "\n\t\tcryo, it goes to waste. No one can hear your cries over the sirens."
 
 string5 += "\n\n\tAfter a while you realise that noone is coming to help you."
 string5 += "\n\tYou slowly lift yourself up, staggering around as you haven't"
@@ -72,13 +75,13 @@ string7 += "\n\t\t\t\t   before."
 string7 += "\n\n\t\t\"check\": checks an adjacent room for a threat"
 string7 += "\n\n\t\t\"hide\": hide from threats in cupboards"
 
-endTime1 = time.time() + 1*12
-endTime2 = time.time() + 1*26
-endTime3 = time.time() + 1*37
-endTime4 = time.time() + 1*46
-endTime5 = time.time() + 1*58
-endTime6 = time.time() + 1*67
-endTime7 = time.time() + 1*77
+endTime1 = time.time() + 1*10
+endTime2 = time.time() + 1*23
+endTime3 = time.time() + 1*33
+endTime4 = time.time() + 1*37
+endTime5 = time.time() + 1*47
+endTime6 = time.time() + 1*52
+endTime7 = time.time() + 1*55
 
 printed1 = False
 printed2 = False
@@ -88,47 +91,82 @@ printed5 = False
 printed6 = False
 printed7 = False
 
-while True:
+start = False
+
+os.system('cls')
+
+print("----------------------------------------------------------------------------")
+print("  __  __     __     ______     __     __         __      __      ______     ")
+print(" /\ \/ /    /\ \   /\  == \   /\ \   /\ \       /\ \     \__\   /\  ___\   ")
+print(" \ \  _ \   \ \ \  \ \  __<   \ \ \  \ \ \____  \ \ \____       \ \___  \  ")
+print("  \ \_\ \_\  \ \_\  \ \_\ \_\  \ \_\  \ \_____\  \ \_____\       \/\_____\ ")
+print("   \/_/\/_/   \/_/   \/_/ /_/   \/_/   \/_____/   \/_____/        \/_____/ ")
+print()
+print("   ______     ______   ______     ______     ______             ")
+print("  /\  ___\   /\  == \ /\  __ \   /\  ___\   /\  ___\            ")
+print("  \ \___  \  \ \  _-/ \ \  __ \  \ \ \____  \ \  __\            ")
+print("   \/\_____\  \ \_\    \ \_\ \_\  \ \_____\  \ \_____\          ")
+print("    \/_____/   \/_/     \/_/\/_/   \/_____/   \/_____/          ")
+print()
+print("  ______     _____     __  __     ______     ______    ______     __  __    ")
+print(" /\  __ \   /\  __-.  /\ \_\ \   /\  ___\   /\  ___\  /\  ___\   /\ \_\ \   ")
+print(" \ \ \/\ \  \ \ \/\ \ \ \____ \  \ \___  \  \ \___  \ \ \  __\   \ \____ \  ")
+print("  \ \_____\  \ \____-  \/\_____\  \/\_____\  \/\_____\ \ \_____\  \/\_____\ ")
+print("   \/_____/   \/____/   \/_____/   \/_____/   \/_____/  \/_____/   \/_____/ ")
+print("")
+print("-----------------------------------------------------------------------------")
+
+userInput=input("\nDo you want to start your adventure(y:to start):")
+if(userInput == "y"):
+	start = True
+else:
+	quit()	
+
+while start:
 	#os.system('cls')
+
 	if(time.time() < endTime1):
-		if(printed1 is False):
-			os.system('cls')
-			print(string1)
-			printed1 = True
+		if(printed1 == False):
+		    os.system('cls')
+		    print(string1)
+		    printed1 = True
+		    winsound.PlaySound("H:/python/thisOne/GroupGame-master/FYH.wav",winsound.SND_ASYNC )
+	
 	elif(time.time() < endTime2):
-		if(printed2 is False):
+		if(printed2 == False):
 			os.system('cls')
 			print(string2)
 			printed2 = True
 	elif(time.time() < endTime3):
-		if(printed3 is False):
+		if(printed3 == False):
 			os.system('cls')
 			print(string3)
 			printed3 = True
 	elif(time.time() < endTime4):
-		if(printed4 is False):
+		if(printed4 == False):
 			os.system('cls')
 			print(string4)
 			printed4 = True
 	elif(time.time() < endTime5):
-		if(printed5 is False):
+		if(printed5 == False):
 			os.system('cls')
 			print(string5)
 			printed5 = True
+			winsound.PlaySound("H:/python/thisOne/GroupGame-master/siren.wav",winsound.SND_ASYNC )
+
 	elif(time.time() < endTime6):
-		if(printed6 is False):
+		if(printed6 == False):
 			os.system('cls')
 			print(string6)
 			printed6 = True
+			winsound.PlaySound("H:/python/thisOne/GroupGame-master/boom.wav",winsound.SND_ASYNC)
+
 	elif(time.time() < endTime7):
-		if(printed7 is False):
+		if(printed7 == False):
 			os.system('cls')
 			print(string7)
 			printed7 = True
+			winsound.PlaySound("H:/python/thisOne/GroupGame-master/bomb-02.wav",winsound.SND_ASYNC)
 	elif(time.time() > endTime7):
 		break
-# Start Oxygen Tank countdown
-TimerWidget()
-
-# Start Main
 main()

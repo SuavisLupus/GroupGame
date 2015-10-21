@@ -15,11 +15,11 @@ room_life = {
     "name": "Life Support",
 
     "description":
-    """The life support room has seen better days. Sparks fly from the system, revealing the walls in sad \nflashes of light and leaving dark and shady corners throughout. You squint your eyes to see, a faint message written on the\n wall FORGIVE ME... There is a distinct smell of bacon in the air. """,
+    """The life support room has seen better days. Sparks fly from the system, revealing the walls in sad \nflashes of light and leaving dark and shady corners throughout. You squint your eyes to see, a faint message written on the\n wall the words FORGIVE ME... written in blood. There is a distinct smell of bacon in the air. """,
 
     "exits": {"east": "Hallway22", "west": "Hallway1"},
 
-    "items": [item_oxygen_filter]
+    "items": []
 }
 
 room_engine = {
@@ -59,7 +59,7 @@ room_bridge = {
     "name": "Bridge",
 
     "description":
-    """The massive windows of the bridge are the first things that greet you, but they are not as they \nonce were. Large cracks run through them, and you start to feel lightheaded \n as you notice the hissing of oxygen leaving the room. \n Blood has pooled around the Captains chair in the centre of the room and you feel relieved \n when there isn’t a body sa- oh wait nope, that’s definitely a severed hand right there.""",
+    """The massive windows of the bridge are the first things that greet you, but they are not as they \nonce were. Large cracks run through them, and you start to feel lightheaded \n as you notice the hissing of oxygen leaving the room. \n Blood has pooled around the Captain’s chair in the centre of the room and you feel relieved \n when there isn’t a body sa- oh wait nope, that’s definitely a severed hand right there.""",
 
     "exits": {"south": "Hallway13"},
 
@@ -85,7 +85,7 @@ room_control = {
 
     "exits": {"north": "stairdown", "south": "Hallway3"},
 
-    "items": [item_IR_emmiter, item_code]
+    "items": []
 }
 
 room_kitchen = {
@@ -107,7 +107,7 @@ room_relay = {
 
     "exits": {"east": "Hallway23", "south": "Cupboard7"},
 
-    "items": [item_wire]
+    "items": []
 }
 
 room_research = {
@@ -118,7 +118,7 @@ room_research = {
 
     "exits": {"east": "Hallway27", "west": "Hallway26"},
 
-    "items": [item_amplifier]
+    "items": []
 }
 
 room_server = {
@@ -129,7 +129,7 @@ room_server = {
 
     "exits": {"west": "Hallway30", "south": "Cupboard8"},
 
-    "items": [item_cable]
+    "items": []
 }
 
 #Hallways

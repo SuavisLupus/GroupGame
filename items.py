@@ -15,9 +15,9 @@ item_knife = {
     "name": "Knife",
 
     "description":
-    """A long sharp blade used by the chef to cut meat""",
-
-    "weight": "0.2"
+	"""A long sharp blade used by the chef to cut meat""",
+	
+	"weight": "0.2"
 }
 
 item_fuel = {
@@ -42,7 +42,7 @@ item_code = {
 }
 
 item_oxygen_filter = {
-	"id": "filter",
+	"id": "oxygen_filter",
 
 	"name": "Oxygen Filter",
 
@@ -58,45 +58,15 @@ item_cable = {
 
 	"description": "A cable that could be used to connect electronic items together",
 
-	"weight": "1.5"
+	"weight": "0.1"
 }
 
 item_distress_beacon = {
-	"id": "beacon",
+	"id": "distress_beacon",
 
 	"name": "Distress Beacon",
 
 	"description": "A beacon that transmits your current location on all emergency channels",
 
-	"weight": "2"
-}
-
-item_wire = {
-	"id": "wire",
-
-	"name": "some copper wire",
-
-	"description": "a small reel of copper wire for small electornics",
-
-	"weight": "0.5"
-}
-
-item_IR_emmiter = {
-	"id": "emmiter",
-
-	"name": "InfraRed emmiter",
-
-	"description": "a device that sends out a repeating SOS signal",
-
-	"weight": "1"
-}
-
-item_amplifier ={
-	"id": "amplifier",
-
-	"name": "amplifier",
-
-	"description": "amplifies the emmisions of an IR emmiter",
-
-	"weight": "0.5"
+	"weight": "3.0"
 }

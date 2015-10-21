@@ -19,7 +19,7 @@ def filter_words(words, skip_words):
 
     >>> filter_words(["help", "me", "please"], ["me", "please"])
     ['help']
-
+    
     >>> filter_words(["go", "south"], skip_words)
     ['go', 'south']
 
@@ -29,8 +29,7 @@ def filter_words(words, skip_words):
     """
 
     word_filter = [each_word for each_word in words if each_word not in skip_words]
-    return word_filter
-
+    return word_filter      
 
 def remove_punct(text):
     """This function is used to remove all punctuation
@@ -52,17 +51,20 @@ def remove_punct(text):
 
     return no_punct
 
-
 def stringToList(text):
     """the function is used to turn a string input and break up the
-       string into several bits utilizing the spaces in between the words
+       string into several bits utilizing the spaces in between the words     
+
     >>> stringToList(" hey babby call me maybe ")
     ['hey', 'babby', 'call', 'me', 'maybe']
     """
     wrdList = []
+    
+    
     wrdList = str.split(text)
     return(wrdList)
 
+    
 
 def normalise_input(user_input):
     """This function removes all punctuation from the string and converts it to
@@ -92,7 +94,8 @@ def normalise_input(user_input):
     # Remove punctuation and convert to lower case
     no_punct = remove_punct(user_input).lower()
     turn2List = stringToList(no_punct)
-    # print(turn2List)
-    no_keywords = filter_words(turn2List, skip_words)
+    #print(turn2List)
+    no_keywords = filter_words(turn2List,skip_words)
+
     wordlist = no_keywords
     return wordlist
