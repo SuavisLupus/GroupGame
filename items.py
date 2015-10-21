@@ -146,7 +146,7 @@ item_research_screen = {
 
 	"name": "Research Screen",
 
-	"description": "water...",
+	"description": "The screen displays the findings of early research on the alien lifeforms \n looking for a weakness to exploit you notice one line saying their skin breaks down \n on contact with large quantities of water",
 
 	"weight": "5.1"
 }

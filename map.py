@@ -19,7 +19,7 @@ room_life = {
     "description":
     """The life support room has seen better days. Sparks fly from the system, revealing the walls in sad \
     \nflashes of light and leaving dark and shady corners throughout. You squint your eyes to see, a faint \
-    \nmessage written on the wall “ + " FORGIVE ME… ” + " There is a distinct smell of bacon in the air. """,
+    \nmessage written on the wall FORGIVE ME..." There is a distinct smell of bacon in the air. \nyou note the anti-fire system is dammaged, it will need a new pipe and some wire to repair \nthe circuit board and a wrench wouldnt hurt either... """,
 
     "exits": {"east": "Hallway22", "west": "Hallway1"},
 
@@ -31,8 +31,8 @@ room_engine = {
 
     "description":
     """The engines lay ominously silent for the first time you could remember, the only noise being the\
-    \n dismal creaking of the ship....Should ships sound like that? You hear the loud sounds of snapping metal \
-    \nin the distance, followed\n by what could only be described as the twanging of a giant rubber band....nope\
+    \ndismal creaking of the ship....Should ships sound like that? You hear the loud sounds of snapping metal \
+    \nin the distance, followed\nby what could only be described as the twanging of a giant rubber band....nope\
     \n....probably not.""",
 
     "exits": {"north": "Hallway1"},
@@ -57,8 +57,10 @@ room_escape = {
 
     "description":
     """Tens of corpses scattered across the floor in various states and....pieces. It reminds you of rugby.\
-    \n  The crew must have ran here once they knew Wales had lost as all but one of the escape pods were gone, \
-    \n clearly not everyone made it. """,
+    \nThe crew must have ran here once they knew Wales had lost as all but one of the escape pods were gone, \
+    \nclearly not everyone made it.\
+    \nthe last escape pod is severly dammaged it will need some cable, a new fuel tank and an oxygen filter \
+    \nbefore its going anywhere... """,
 
     "exits": {"south": "Hallway9"},
 
@@ -84,8 +86,8 @@ room_cafeteria = {
 
     "description":
     """The cafeteria is a mess of scattered plates and food, it looks like it was the lunch hour when all of this began. \
-    \n Judging from the state of some of the food you gather that the attack had been more recent than you first thought,\
-    \n a few days at most.""",
+    \nJudging from the state of some of the food you gather that the attack had been more recent than you first thought,\
+    \na few days at most.""",
 
     "exits": {"east": "Kitchen", "south": "Hallway15"},
 
@@ -98,7 +100,7 @@ room_control = {
     "description":
     """The control rooms massive machines are spaced evenly across the floor, it seems that everyone managed to\
     \nget out of here at least as there is next to no damage. A streak of blood runs through the doorway as if\
-    \n left by a dragged and bleeding body....dead or alive you cannot tell.""",
+    \nleft by a dragged and bleeding body....dead or alive you cannot tell.""",
 
     "exits": {"north": "stairdown", "south": "Hallway3"},
 
@@ -110,9 +112,9 @@ room_kitchen = {
 
     "description":
     """Multiple stoves and ovens line one side of the room, with various kitchen tools and utensils scattered\
-    \n throughout. As you look around you start to remember you used to have a thing for the old cafeteria lady, \
+    \nthroughout. As you look around you start to remember you used to have a thing for the old cafeteria lady, \
     \nDorothy. She was sexy as can be, legs as long as a runway, curves that would make an hour glass jealous. \
-    \nYou have many fond memories of this place and\n feel a deep warmth grow from within. You regret the mistakes\
+    \nYou have many fond memories of this place and\nfeel a deep warmth grow from within. You regret the mistakes\
     \nthat have led to this day, the life you could have had....Was it hot in here? """,
 
     "exits": {"south": "Hallway16", "west": "Cafeteria"},
@@ -137,10 +139,10 @@ room_research = {
 
     "description":
     """Strange plants and creatures are scattered in glass containers throughout the room, you are acutely aware\
-    \n that some of the containers lie broken and empty........ Looking around more you start to fully realise the \
-    \n extent of the mess; pages of notes, chemicals, and lab equipment mix with the blood and the bodies of the main\
-    \n research team. Only one terminal is still in working order, the others having been seemingly smashed apart in \
-    \n the struggle.""",
+    \nthat some of the containers lie broken and empty........ Looking around more you start to fully realise the \
+    \nextent of the mess; pages of notes, chemicals, and lab equipment mix with the blood and the bodies of the main\
+    \nresearch team. Only one terminal is still in working order, the others having been seemingly smashed apart in \
+    \nthe struggle.""",
 
     "exits": {"east": "Hallway27", "west": "Hallway26"},
 
@@ -152,8 +154,8 @@ room_server = {
 
     "description":
     """A few of the ships servers flicker with light while others lie dead, the ship must have shut down the non-important\
-    \n ones to conserve power. At the same time you notice a few have been destroyed entirely, with bodies lying partially\
-    \n inside them as if thrown at great force.""",
+    \nones to conserve power. At the same time you notice a few have been destroyed entirely, with bodies lying partially\
+    \ninside them as if thrown at great force.""",
 
     "exits": {"west": "Hallway30", "south": "Cupboard8"},
 
@@ -166,7 +168,7 @@ room_hallway1 = {
 
     "description":
     """The hallway shows signs of a recent struggle, with bullet holes and blood marking the now-dirty walls.\
-    \n  To the west is life support, the south holds the engine room, to the west is the cryo chamber, and to\
+    \nTo the west is life support, the south holds the engine room, to the west is the cryo chamber, and to\
     \nthe north lies the rest of the ship.""",
 
     "exits": {"north": "Hallway3", "east": "Life", "south": "Engine", "west": "Cryo"},
@@ -240,7 +242,7 @@ room_hallway9 = {
 
     "description":
     """The escape-pod room lies directly infront of you, and the hallway extends far both to the east and south. \
-    \n You remember the kitchen and stairs to the upper deck were definately to the east somewhere....""",
+    \nYou remember the kitchen and stairs to the upper deck were definately to the east somewhere....""",
 
     "exits": {"north": "Escape", "east": "Hallway10", "south": "Hallway8"},
 
@@ -334,7 +336,7 @@ room_hallway20 = {
 
     "description":
     """This part of the ship lies suspiciously quiet and empty, you hope it stays that way.\
-    \n The hallway continues north and southwards, with the maintenance room from before to the west.""",
+    \nThe hallway continues north and southwards, with the maintenance room from before to the west.""",
 
     "exits": {"north": "Hallway18", "south": "Hallway22", "west": "Maintenance"},
 
@@ -404,7 +406,7 @@ room_hallway29 = {
 
     "description":
     """The shattered lights above do nothing to illuminate the hallway, you are unsure if you prefer the darkness\
-    \n to the ominous flickering of the rest of the ship.""",
+    \nto the ominous flickering of the rest of the ship.""",
 
     "exits": {"north": "Hallway27", "east": "Hallway30", "west": "stairup"},
 
@@ -516,7 +518,7 @@ room_stairsDown = {
     "name": "lower Stairwell",
 
     "description":
-    """Stairs are so much better when you’re going down them, you whistle a jaunty tune until you see the blood\
+    """Stairs are so much better when you are going down them, you whistle a jaunty tune until you see the blood\
     \nseeping from a nearby air duct, oh yeah...killer aliens.""",
 
     "exits": {"up": "stairup", "north": "Hallway12", "south": "Control"},
@@ -528,8 +530,8 @@ room_stairsUp = {
     "name": "upper Stairwell",
 
     "description":
-    """You arrive upstairs panting and out of breath, maybe you should’ve bought that £225 gym membership \
-    \nwhen you had the chance.....or not. You remember this floor houses the research, relay, and server rooms.""",
+    """You arrive upstairs panting and out of breath, maybe you should have bought that £225 gym membership \
+    \nwhen you had the chance...or not. You remember this floor houses the research, relay, and server rooms.""",
 
     "exits": {"down": "stairdown", "east": "Hallway29", "west": "Hallway24"},
 

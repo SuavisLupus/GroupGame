@@ -248,6 +248,9 @@ def print_menu(exits, room_items, inv_items):
         if items["id"] == "beacon":
             distress = True
 
+    if rooms["Life"]["description"] == "The life support room has seen better days. Sparks fly from the system, revealing the walls in sad \nflashes of light and leaving dark and shady corners throughout. You squint your eyes to see, a faint message written on the\nwall FORGIVE ME... The anti-fire system is running efficiently, \nnow it will douse any fire with a ship wide monsoon" and current_room == rooms["Kitchen"]:
+        print("BURN CLOTHES to start a fire!")
+
     if cable == True and oxygen == True and fuel == True:
         print("go to the escape pod and enter the airlock code to escape...")
 
@@ -505,7 +508,7 @@ def encounter(alien_injuries):
         if command[0] == "attack":
             print("attack")
             Won = True
-            timeout = time.time() + 1*30
+            timeout = time.time() + 1*6
             difficulty = randrange(3, 7, 1)
             weapon = 0
             mistakes = 0
@@ -613,10 +616,11 @@ def encounter(alien_injuries):
                         mistakes = mistakes + 1
                     elif "slash" != normalise_input(attack)[0]:
                         mistakes = mistakes + 1
-
+                intelect = 0
             if time.time() < timeout and mistakes <= 2:
                 won = True
                 print("you beat the alien back and managed to run to the next room...")
+                
             else:
                 Won = False
 
@@ -653,8 +657,7 @@ def encounter(alien_injuries):
             else:
                 print("you fail to kill the alien and it devours you...")
                 player_alive = False
-                main()
-                return alien_injuries
+                death(player_alive)
 
 
 def menu(exits, room_items, inv_items):
@@ -671,6 +674,7 @@ def menu(exits, room_items, inv_items):
     global alien1_injuries
     global alien2_injuries
     global alien3_injuries
+    global endturn
 
     # Check for alien presense
     if alien1_current_room == current_room:
@@ -740,9 +744,7 @@ def alien_move(alien_current_room):
     global current_room
     exits = alien_current_room["exits"]
 
-    for items in inventory:
-        if items["id"] == "screwdriver":
-            intelect = 1
+    
 
     if intelect == 0:
         if number == 1:
@@ -797,6 +799,10 @@ def alien_move(alien_current_room):
         if current_room == rooms["stairdown"] and number == 1:
             direction = "down"
 
+        for items in inventory:
+            if items["id"] == "screwdriver":
+                if intelect != 1:
+                    intelect = 1
         if(is_valid_exit(exits,direction)) and move(exits,direction)["name"] != "Cupboard":
             return rooms[exits[direction]]
         else:
@@ -857,7 +863,7 @@ def check_win(current_room):
         rooms["Life"]["items"].remove(item_pipe)
         rooms["Life"]["items"].remove(item_wire)
         print("you use the wrench and the pipe to fix the broken anti-fire system and \nuse the wire to repair the circuit boards")
-        rooms["Life"]["description"] = "The life support room has seen better days. Sparks fly from the system, revealing the walls in sad \nflashes of light and leaving dark and shady corners throughout. You squint your eyes to see, a faint message written on the\nwall FORGIVE ME... The anti-fire system is running efficiently, \nnow it will douse any fire with a ship wide monsoon"
+        rooms["Life"]["description"] = "The life support room has seen better days. Sparks fly from the system, revealing the walls in sad \nflashes of light and leaving dark and shady corners throughout. You squint your eyes to see, \na faint message written on the wall FORGIVE ME... The anti-fire system is running efficiently, \nnow it will douse any fire with a ship wide monsoon"
         print("now just to start the fire...")
 
 
