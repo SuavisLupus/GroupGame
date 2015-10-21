@@ -30,7 +30,7 @@ room_engine = {
     "name": "Engine Room",
 
     "description":
-    """The engines lay ominously silent for the first time Kirill could remember, the only noise being the\
+    """The engines lay ominously silent for the first time you could remember, the only noise being the\
     \n dismal creaking of the ship....Should ships sound like that? You hear the loud sounds of snapping metal \
     \nin the distance, followed\n by what could only be described as the twanging of a giant rubber band....nope\
     \n....probably not.""",
@@ -44,7 +44,8 @@ room_maintenance = {
     "name": "Maintenance",
 
     "description":
-    """description""",
+    """Tools and shelves line the walls of the maintenance room, you think to look for something useful in here\
+    \nbut wouldnt really know where to start...""",
 
     "exits": {"east": "Hallway20", "west": "Hallway3"},
 
@@ -82,7 +83,9 @@ room_cafeteria = {
     "name": "Cafeteria",
 
     "description":
-    """description""",
+    """The cafeteria is a mess of scattered plates and food, it looks like it was the lunch hour when all of this began. \
+    \n Judging from the state of some of the food you gather that the attack had been more recent than you first thought,\
+    \n a few days at most.""",
 
     "exits": {"east": "Kitchen", "south": "Hallway15"},
 
@@ -93,7 +96,9 @@ room_control = {
     "name": "Control",
 
     "description":
-    """description""",
+    """The control rooms massive machines are spaced evenly across the floor, it seems that everyone managed to\
+    \nget out of here at least as there is next to no damage. A streak of blood runs through the doorway as if\
+    \n left by a dragged and bleeding body....dead or alive you cannot tell.""",
 
     "exits": {"north": "stairdown", "south": "Hallway3"},
 
@@ -119,7 +124,8 @@ room_relay = {
     "name": "Relay Room",
 
     "description":
-    """description""",
+    """Youd never been in the relay room before and are surprised at its small size. Static plays through the intercom\
+    \ninfront of a slouched body, it looks like they tried calling for help.....it didnt work.""",
 
     "exits": {"east": "Hallway23", "south": "Cupboard7"},
 
@@ -131,10 +137,10 @@ room_research = {
 
     "description":
     """Strange plants and creatures are scattered in glass containers throughout the room, you are acutely aware\
-    \nthat some of the containers lie broken and empty........ Looking around more you start to fully realise the \
-    \nextent of the mess; pages of notes, chemicals, and lab equipment mix with the blood and the bodies of the main\
-    \nresearch team. Only one terminal is still in working order, the others having been seemingly smashed apart in \
-    \nthe struggle.""",
+    \n that some of the containers lie broken and empty........ Looking around more you start to fully realise the \
+    \n extent of the mess; pages of notes, chemicals, and lab equipment mix with the blood and the bodies of the main\
+    \n research team. Only one terminal is still in working order, the others having been seemingly smashed apart in \
+    \n the struggle.""",
 
     "exits": {"east": "Hallway27", "west": "Hallway26"},
 
@@ -145,7 +151,9 @@ room_server = {
     "name": "Server Room",
 
     "description":
-    """description""",
+    """A few of the ships servers flicker with light while others lie dead, the ship must have shut down the non-important\
+    \n ones to conserve power. At the same time you notice a few have been destroyed entirely, with bodies lying partially\
+    \n inside them as if thrown at great force.""",
 
     "exits": {"west": "Hallway30", "south": "Cupboard8"},
 
@@ -268,7 +276,7 @@ room_hallway13 = {
     "name": "Hallway",
 
     "description":
-    """A long bland hallway...""",
+    """The door to the bridge is right infront of you.""",
 
     "exits": {"north": "Bridge", "south": "Hallway12"},
 
@@ -279,7 +287,8 @@ room_hallway14 = {
     "name": "Hallway",
 
     "description":
-    """A long bland hallway...""",
+    """You nose twitches as you smell something other than the aroma of death on the ship...you must be nearing the cafeteria.\
+    \nA cupboard lies to the south.""",
 
     "exits": {"east": "Hallway15", "south": "Cupboard3", "west": "Hallway12"},
 
@@ -290,7 +299,7 @@ room_hallway15 = {
     "name": "Hallway",
 
     "description":
-    """A long bland hallway...""",
+    """The big double doors of the cafeteria loom infront of you, partially wedged open by...is that a leg?""",
 
     "exits": {"north": "Cafeteria", "east": "Hallway16", "west": "Hallway14"},
 
@@ -301,7 +310,7 @@ room_hallway16 = {
     "name": "Hallway",
 
     "description":
-    """A long bland hallway...""",
+    """You stand infront of the kitchen, to the south lies a hallway that you think may lead to the maintenance room.""",
 
     "exits": {"north": "Kitchen", "south": "Hallway18", "west": "Hallway15"},
 
@@ -312,7 +321,8 @@ room_hallway18 = {
     "name": "Hallway",
 
     "description":
-    """A long bland hallway...""",
+    """Blood seeps through a hole in the ceiling, pooling on the floor below.\
+    \nTo the east you notice a cupboard door.""",
 
     "exits": {"north": "Hallway16", "east": "Cupboard4", "south": "Hallway20"},
 
@@ -323,7 +333,8 @@ room_hallway20 = {
     "name": "Hallway",
 
     "description":
-    """A long bland hallway...""",
+    """This part of the ship lies suspiciously quiet and empty, you hope it stays that way.\
+    \n The hallway continues north and southwards, with the maintenance room from before to the west.""",
 
     "exits": {"north": "Hallway18", "south": "Hallway22", "west": "Maintenance"},
 
@@ -334,7 +345,8 @@ room_hallway22 = {
     "name": "Hallway",
 
     "description":
-    """A long bland hallway...""",
+    """The hallway suddenly ends, with tiny holes scattered throughout the wall. You wonder what could have\
+    \npossibly made them......To the west is the life support systems, the east holds a cupboard.""",
 
     "exits": {"north": "Hallway20", "east": "Cupboard5", "west": "Life"},
 
@@ -345,7 +357,8 @@ room_hallway23 = {
     "name": "Hallway",
 
     "description":
-    """A long bland hallway...""",
+    """You hear a noise and turn around suddenly....the hallway lies empty.\
+    \nTo your west is the relay room, the hallway extends to the east.""",
 
     "exits": {"east": "Hallway24", "west": "Relay"},
 
@@ -356,7 +369,8 @@ room_hallway24 = {
     "name": "Hallway",
 
     "description":
-    """A long bland hallway...""",
+    """The upstairs of the ship is in exactly the same state as below. It looks like a lot of the crew\
+    became trapped up here after the initial struggle. To the east lies the stairwell.""",
 
     "exits": {"north": "Hallway26", "east": "stairup", "west": "Hallway23"},
 
@@ -367,7 +381,7 @@ room_hallway26 = {
     "name": "Hallway",
 
     "description":
-    """A long bland hallway...""",
+    """The research rooms doors lie broken and warped in the centre of the hallway, what happened here? .""",
 
     "exits": {"east": "Research", "south": "Hallway24"},
 
@@ -378,7 +392,7 @@ room_hallway27 = {
     "name": "Hallway",
 
     "description":
-    """A long bland hallway...""",
+    """The shattered glass windows of the research room gives hints at the mess within.""",
 
     "exits": {"south": "Hallway29", "west": "Research"},
 
@@ -389,7 +403,8 @@ room_hallway29 = {
     "name": "Hallway",
 
     "description":
-    """A long bland hallway...""",
+    """The shattered lights above do nothing to illuminate the hallway, you are unsure if you prefer the darkness\
+    \n to the ominous flickering of the rest of the ship.""",
 
     "exits": {"north": "Hallway27", "east": "Hallway30", "west": "stairup"},
 
@@ -400,7 +415,7 @@ room_hallway30 = {
     "name": "Hallway",
 
     "description":
-    """A long bland hallway...""",
+    """The server room lies at the end of the hallway, bloodied handprints mark the walls surounding the door....""",
 
     "exits": {"east": "Server", "west": "Hallway29"},
 
@@ -413,7 +428,7 @@ room_cupboard1 = {
     "name": "Cupboard",
 
     "description":
-    """A hiding place""",
+    """Various cleaning supplies litter the dark cupboard, you think that this could be a good place to hide.""",
 
     "exits": {"south": "Hallway4"},
 
@@ -424,7 +439,7 @@ room_cupboard2 = {
     "name": "Cupboard",
 
     "description":
-    """A hiding place""",
+    """Various cleaning supplies litter the dark cupboard, you think that this could be a good place to hide.""",
 
     "exits": {"north": "Hallway5"},
 
@@ -435,7 +450,7 @@ room_cupboard3 = {
     "name": "Cupboard",
 
     "description":
-    """A hiding place""",
+    """Various cleaning supplies litter the dark cupboard, you think that this could be a good place to hide.""",
 
     "exits": {"north": "Hallway14"},
 
@@ -446,7 +461,7 @@ room_cupboard4 = {
     "name": "Cupboard",
 
     "description":
-    """A hiding place""",
+    """Various cleaning supplies litter the dark cupboard, you think that this could be a good place to hide.""",
 
     "exits": {"west": "Hallway18"},
 
@@ -457,7 +472,7 @@ room_cupboard5 = {
     "name": "Cupboard",
 
     "description":
-    """A hiding place""",
+    """Various cleaning supplies litter the dark cupboard, you think that this could be a good place to hide.""",
 
     "exits": {"west": "Hallway22"},
 
@@ -468,7 +483,7 @@ room_cupboard6 = {
     "name": "Cupboard",
 
     "description":
-    """A hiding place""",
+    """Various cleaning supplies litter the dark cupboard, you think that this could be a good place to hide.""",
 
     "exits": {"east": "Hallway8"},
 
@@ -479,7 +494,7 @@ room_cupboard7 = {
     "name": "Cupboard",
 
     "description":
-    """A hiding place""",
+    """Various cleaning supplies litter the dark cupboard, you think that this could be a good place to hide.""",
 
     "exits": {"north": "Relay"},
 
@@ -490,7 +505,7 @@ room_cupboard8 = {
     "name": "Cupboard",
 
     "description":
-    """A hiding place""",
+    """Various cleaning supplies litter the dark cupboard, you think that this could be a good place to hide.""",
 
     "exits": {"north": "Server"},
 
@@ -501,7 +516,8 @@ room_stairsDown = {
     "name": "lower Stairwell",
 
     "description":
-    """you can go up the stairs""",
+    """Stairs are so much better when you’re going down them, you whistle a jaunty tune until you see the blood\
+    \nseeping from a nearby air duct, oh yeah...killer aliens.""",
 
     "exits": {"up": "stairup", "north": "Hallway12", "south": "Control"},
 
@@ -512,7 +528,8 @@ room_stairsUp = {
     "name": "upper Stairwell",
 
     "description":
-    """you can go down the stairs""",
+    """You arrive upstairs panting and out of breath, maybe you should’ve bought that £225 gym membership \
+    \nwhen you had the chance.....or not. You remember this floor houses the research, relay, and server rooms.""",
 
     "exits": {"down": "stairdown", "east": "Hallway29", "west": "Hallway24"},
 
