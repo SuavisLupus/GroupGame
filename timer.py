@@ -22,7 +22,15 @@ class TimerWidget(tk.Tk):
         # pack it
         self.label.pack()
         # title of gui window
-        self.wm_title("Oxygen Tank")
+        self.wm_title("HUD")
+        # set logo, use PhotoImage
+        logo = tk.PhotoImage(file="Map.gif")
+        # keep reference of image so garbage collector doesnt eat it
+        logo.image = logo
+        w1 = tk.Label(self, image=logo).pack(side="right")
+        #explanation = """EMPTY SPACE"""
+        w2 = tk.Label(self, justify='left').pack(side="left")
+
         # icon of gui window
         self.wm_iconbitmap('new.ico')
         global remaining
@@ -43,7 +51,7 @@ class TimerWidget(tk.Tk):
             game.death(player_alive)
 
         else:
-            self.label.configure(fg='green', bg='black', text="Oxygen tank: %d seconds left until depletion" % self.remaining)
+            self.label.configure(fg='green', text="Oxygen tank: %d seconds left until depletion" % self.remaining)
             self.remaining = self.remaining - 1
             self.after(1000, self.countdown)
 
