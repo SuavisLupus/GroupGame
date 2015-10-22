@@ -326,6 +326,9 @@ def execute_take(item_id):
     endturn = endturn + 1
     
 def exectue_inspect(item_id):
+    """this function takes an item_id and  prints the item descriptioin so the player can get a better understanding 
+    of the world they are in
+    """
     for item in current_room["items"]:
         if item["id"] == item_id:
             print(item["description"])
@@ -377,7 +380,10 @@ def execute_check(direction):
         print("You cannot go there.")
     
 def isAvailCarry(item_id):
-
+    """this function checks weather the players total inventory weight exceeds a set limit
+    if it does then the function returns false which in turn causes the player to be unable 
+    to pick up more items.
+    """
     global inventory
     totalWeight = 0.0
     itmWeight = 0.0
@@ -473,6 +479,10 @@ def execute_command(command):
 
 
 def encounter(alien_injuries):
+    """this function is called when a player and an alien are in the same room
+    it gives the player the option to run away(hit enter repeatedly to eascape the alien)
+    or the option to fight the alien by typing quickly the commands in CAPS.
+    """
     global current_room
     global player_alive
 
@@ -739,6 +749,10 @@ def move(exits, direction):
     return rooms[exits[direction]]
 
 def alien_move(alien_current_room):
+    """this function makes the aliens move randomly in any possible direction and if
+    the player is holding a screwdriver they will jump on the player when they move
+    into and adjecant room
+    """
     number = randrange(1, 5, 1)
     intelect = 0
     global current_room
@@ -809,6 +823,8 @@ def alien_move(alien_current_room):
             return alien_current_room
 
 def death(player_alive):
+    """this function ends the game upon failure
+    """
     if player_alive == False:
         print('You have died.\n\nGame Over.')
         time.sleep(2)
@@ -817,6 +833,10 @@ def death(player_alive):
         pass
 
 def check_win(current_room):
+    """this function checks the two vitocry rooms and weather they have met
+    the right conditioins to put them in a state where a command can be issued
+    to win the game(or throw yourself out to starve in space)
+    """
     global player_alive
     global Water_fixed
     fuel = False
