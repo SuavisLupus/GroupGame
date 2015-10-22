@@ -150,3 +150,75 @@ item_research_screen = {
 
 	"weight": "5.1"
 }
+
+#useless items
+
+item_bucket ={
+	"id": "bucket",
+
+	"name": "Bucket",
+
+	"description": "An old steel bucket",
+
+	"weight": "0.7"
+}
+
+item_lamp ={
+	"id": "lamp",
+
+	"name": "Lamp",
+
+	"description": "A broken lamp, that's fairly useless.",
+
+	"weight": "1.0"
+}
+
+item_coin ={
+	"id": "coin",
+
+	"name": "Coin",
+
+	"description": "A shiny coin",
+
+	"weight": "0.1"
+}
+
+item_phone ={
+	"id": "phone",
+
+	"name": "Phone",
+
+	"description": "A mobile phone which used to be owned by one of the crew members, I doubt we'll get any signal way out here...",
+
+	"weight": "0.3"
+}
+
+item_mouse ={
+	"id": "mouse",
+
+	"name": "Mouse",
+
+	"description": "A mouse that allows someone to move the cursor on a computer.",
+
+	"weight": "0.3"
+}
+
+item_stool ={
+	"id": "stool",
+
+	"name": "Stool",
+
+	"description": "A metal stool that was designed to be sat on.",
+
+	"weight": "2.0"
+}
+
+item_mop ={
+	"id": "mop",
+
+	"name": "Mop",
+
+	"description": "A basic mop with a metal handle",
+
+	"weight": "1.0"
+}
