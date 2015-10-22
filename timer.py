@@ -1,7 +1,9 @@
 import tkinter as tk
 import game
-# Description: Countdown Timer which indicates the oxygen tank and how much time the player has until
-# it is over. Used tkinter for simplicity, it comes as standard Python package.
+# Description: (1) Countdown Timer which indicates the oxygen tank and how much time the player has until
+# it is over. (2) Display map to player by displaying an image.
+#
+# Used tkinter for simplicity, it comes as standard Python package.
 #
 # References:
 # - http://infohost.nmt.edu/tcc/help/pubs/tkinter/web/index.html
