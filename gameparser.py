@@ -27,7 +27,7 @@ def filter_words(words, skip_words):
     ['go', 'passage', 'south']
 
     """
-
+    # For loop which checks every word in the given string, if any word matches with a word in the skip_words variable then it is removed.
     word_filter = [each_word for each_word in words if each_word not in skip_words]
     return word_filter
 
@@ -45,6 +45,7 @@ def remove_punct(text):
     >>> remove_punct(",go!So.?uTh")
     'goSouTh'
     """
+    # For loop which checks every character in a given string and if it is punctuation, it is removed.
     no_punct = ""
     for char in text:
         if not (char in string.punctuation):
@@ -59,6 +60,7 @@ def stringToList(text):
     >>> stringToList(" hey babby call me maybe ")
     ['hey', 'babby', 'call', 'me', 'maybe']
     """
+    # Splits the string so that any extra whitespace on the left or right of the string is removed.
     wrdList = []
     wrdList = str.split(text)
     return(wrdList)
@@ -91,8 +93,9 @@ def normalise_input(user_input):
     """
     # Remove punctuation and convert to lower case
     no_punct = remove_punct(user_input).lower()
+    # Removes extra whitespace
     turn2List = stringToList(no_punct)
-    # print(turn2List)
+    # Removes words that are in the skip_words function
     no_keywords = filter_words(turn2List, skip_words)
     wordlist = no_keywords
     return wordlist
