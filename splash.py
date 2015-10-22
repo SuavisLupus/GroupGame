@@ -49,7 +49,7 @@ string5 = "\n\n\t\tYou wake up from cryo, dazed, cold and alone."
 string5 += "\n\tAs the door opens you fall to the floor onto the metal grating."
 
 string5 += "\n\n\tYou call out for help as you lay on the floor thawing from"
-string5 += "\n\t\tcryo, hear nothing but the hum of the engines/machinery."
+string5 += "\n\t\tcryo, hear nothing but the hum of the engines."
 
 string5 += "\n\n\tAfter a while you realise that noone is coming to help you."
 string5 += "\n\tYou slowly lift yourself up, staggering around as you haven't"
