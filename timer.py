@@ -26,6 +26,7 @@ class TimerWidget(tk.Tk):
         # title of gui window
         self.wm_title("HUD")
         # set logo, use PhotoImage
+        global logo
         logo = tk.PhotoImage(file="Map.gif")
         # keep reference of image so garbage collector doesnt eat it
         logo.image = logo
