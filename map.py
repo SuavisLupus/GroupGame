@@ -63,7 +63,7 @@ room_bridge = {
 
     "exits": {"south": "Hallway13"},
 
-    "items": []
+    "items": [item_lamp]
 }
 
 room_cafeteria = {
@@ -74,7 +74,7 @@ room_cafeteria = {
 
     "exits": {"east": "Kitchen", "south": "Hallway15"},
 
-    "items": []
+    "items": [item_stool]
 }
 
 room_control = {
@@ -107,7 +107,7 @@ room_relay = {
 
     "exits": {"east": "Hallway23", "south": "Cupboard7"},
 
-    "items": [item_wire]
+    "items": [item_wire, item_mouse]
 }
 
 room_research = {
@@ -262,7 +262,7 @@ room_hallway15 = {
 
     "exits": {"north": "Cafeteria", "east": "Hallway16", "west": "Hallway14"},
 
-    "items": []
+    "items": [item_bucket]
 }
 
 room_hallway16 = {
@@ -284,7 +284,7 @@ room_hallway18 = {
 
     "exits": {"north": "Hallway16", "east": "Cupboard4", "south": "Hallway20"},
 
-    "items": []
+    "items": [item_mop]
 }
 
 room_hallway20 = {
@@ -350,7 +350,7 @@ room_hallway27 = {
 
     "exits": {"south": "Hallway29", "west": "Research"},
 
-    "items": []
+    "items": [item_coin]
 }
 
 room_hallway29 = {
